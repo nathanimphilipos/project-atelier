@@ -1,0 +1,1949 @@
+"Control Information
+",,,,,,,,,GovRAMP Parameters,,,Evidence Examples,Control Completed,Score,Month Last Passed,,PMO Feedback 202601,PMO Feedback 202510,PMO Feedback 202507,PMO Feedback 202504,PMO Feedback 202501,PMO Feedback 202410,PMO Feedback 202407,PMO Feedback 202404,PMO Feedback 202401
+"Count
+","SORT ID
+",MITRE Control Protection Value,Score Percentage,Family,ID,Control Name,"NIST Control Description
+ (From NIST SP 800-53r5 12/10/2020)","NIST Discussion
+ (From NIST SP 800-53r5 12/10/2020)","GovRAMP-Defined Assignment / Selection Parameters 
+ (Numbering matches SSP)",Additional GovRAMP Requirements and Guidance,,,,,,,,,,,,,,,
+1,AC-02,99.64,3.44%,ACCESS CONTROL,AC-2,Account Management,"a. Define and document the types of accounts allowed and specifically prohibited for use within the system;
+ b. Assign account managers;
+ c. Require [Assignment: organization-defined prerequisites and criteria] for group and role membership;
+ d. Specify:
+ 1. Authorized users of the system;
+ 2. Group and role membership; and
+ 3. Access authorizations (i.e., privileges) and [Assignment: organization-defined attributes (as required)] for each account;
+ e. Require approvals by [Assignment: organization-defined personnel or roles] for requests to create accounts;
+ f. Create, enable, modify, disable, and remove accounts in accordance with [Assignment: organization-defined policy, procedures, prerequisites, and criteria];
+ g. Monitor the use of accounts;
+ h. Notify account managers and [Assignment: organization-defined personnel or roles] within:
+ 1. [Assignment: organization-defined time period] when accounts are no longer required;
+ 2. [Assignment: organization-defined time period] when users are terminated or transferred; and
+ 3. [Assignment: organization-defined time period] when system usage or need-to-know changes for an individual;
+ i. Authorize access to the system based on:
+ 1. A valid access authorization;
+ 2. Intended system usage; and
+ 3. [Assignment: organization-defined attributes (as required)];
+ j. Review accounts for compliance with account management requirements [Assignment: organization-defined frequency];
+ k. Establish and implement a process for changing shared or group account authenticators (if deployed) when individuals are removed from the group; and
+ l. Align account management processes with personnel termination and transfer processes.","Examples of system account types include individual, shared, group, system, guest, anonymous, emergency, developer, temporary, and service. Identification of authorized system users and the specification of access privileges reflect the requirements in other controls in the security plan. Users requiring administrative privileges on system accounts receive additional scrutiny by organizational personnel responsible for approving such accounts and privileged access, including system owner, mission or business owner, senior agency information security officer, or senior agency official for privacy. Types of accounts that organizations may wish to prohibit due to increased risk include shared, group, emergency, anonymous, temporary, and guest accounts.
+ Where access involves personally identifiable information, security programs collaborate with the senior agency official for privacy to establish the specific conditions for group and role membership; specify authorized users, group and role membership, and access authorizations for each account; and create, adjust, or remove system accounts in accordance with organizational policies. Policies can include such information as account expiration dates or other factors that trigger the disabling of accounts. Organizations may choose to define access privileges or other attributes by account, type of account, or a combination of the two. Examples of other attributes required for authorizing access include restrictions on time of day, day of week, and point of origin. In defining other system account attributes, organizations consider system-related requirements and mission/business requirements. Failure to consider these factors could affect system availability.
+ Temporary and emergency accounts are intended for short-term use. Organizations establish temporary accounts as part of normal account activation procedures when there is a need for short-term accounts without the demand for immediacy in account activation. Organizations establish emergency accounts in response to crisis situations and with the need for rapid account activation. Therefore, emergency account activation may bypass normal account authorization processes. Emergency and temporary accounts are not to be confused with infrequently used accounts, including local logon accounts used for special tasks or when network resources are unavailable (may also be known as accounts of last resort). Such accounts remain available and are not subject to automatic disabling or removal dates. Conditions for disabling or deactivating accounts include when shared/group, emergency, or temporary accounts are no longer required and when individuals are transferred or terminated. Changing shared/group authenticators when members leave the group is intended to ensure that former group members do not retain access to the shared or group account. Some types of system accounts may require specialized training.","AC-2 (h) (1) [twenty-four (24) hours]
+AC-2 (h) (2) [eight (8) hours]
+AC-2 (h) (3) [eight (8) hours]
+AC-2 (j) [quarterly for privileged access, annually for non-privileged access]",,,"• Documentation of allowed and prohibited account types
+• Personnel policy and procedure
+• List of account managers
+• Access authorization records, emails, or helpdesk tickets
+• Screenshot of recently disabled system accounts and the name of the individual associated with each account
+• Account access termination records
+• List of active system accounts along with the name of the individual associated with each account
+• List of conditions for group and role membership
+• Notifications of recent transfers, separations, or terminations of employees
+• Account management compliance reviews
+• User/system audit records",No,0.00%,,,"(a): Pass with Concerns: New evidence shows allowed types of accounts, but does not explicitly enumerate prohibited account types
+
+(b): Pass with concerns: new evidence describes roles but formal designation language (e.g. ""Account Managers shall be..."") is still implied
+
+(c): Pass 
+
+(d): Pass with Concerns: RBAC is described, but attributes are not formerly defined.
+
+(e): Fail: The policy mentions Jira and Director approval, but no approval workflow artifact is provided
+
+(f): Fail: Policy text exist but no Procedure/ SOP document is attached or referenced as evidence.
+
+(g): Fail: New evidence describes logging but no SIEM evidence is provided.
+
+(h): Pass with Concerns: New evidence defines timelines but no notification evidence is shown. Provide supporting evidence of such notifications within the defined parameters.
+
+(i): Pass
+
+(j): Pass with Concerns: New evidence states the review cadence but no sample review record, attestation or SOC evidence screenshot is included. Provide evidence of such reviews.
+
+(k): Fail: The Policy acknowledges shared accounts but no defined rotation or credential-change process exists. Define the process for changing the authenticators when an individual is removed from a group.
+
+(l): Pass
+
+NOTE: While the attached policy is tailored to align with NIST and GovRAMP requirements, there must be context tied to SaltyCloud for the processes that are defined in the policy. 
+
+*response to part NOTE - in the policy, it includes sub sections that describe the way in which the policy is implemented. It is titled 'SaltyCloud Organizational Implementation Context.'","(a): Pass with Concerns: Include parameters for accounts specifically prohibited.
+
+(b): Pass with Concerns: Define the roles/personnel representing account managers.
+
+(c): Pass with Concerns: What are the conditions?
+
+(d): Pass with Concerns: Specify access authorizations and defined attributes for each account.
+
+(e): Fail: Who/what personnel or roles perform the approvals?
+
+(f): Fail: Attach the policies and procedures that define the creation, enabling, modification, and disabling of accounts. 
+
+(g): Fail: Provide evidence within the SIEM of account monitoring (logs).
+
+(h): Pass with Concerns: Provide supporting evidence of such notifications within the defined parameters.
+
+(i): Pass
+
+(j): Pass with Concerns: Provide evidence of such reviews.
+
+(k): Fail: Define the process for changing the authenticators when an individual is removed from a group.
+
+(l): Pass
+
+NOTE: While the attached policy is tailored to align with NIST and GovRAMP requirements, there must be context tied to SaltyCloud for the processes that are defined in the policy. ","No new evidence submitted as of 7/24/2025.
+(a): Pass with Concerns: Include parameters for accounts specifically prohibited.
+
+(b): Pass with Concerns: Define the roles/personnel representing account managers.
+
+(c): Pass with Concerns: What are the conditions?
+
+(d): Pass with Concerns: Specify access authorizations and defined attributes for each account.
+
+(e): Fail: Who/what personnel or roles perform the approvals?
+
+(f): Fail: Attach the policies and procedures that define the creation, enabling, modification, and disabling of accounts. 
+
+(g): Fail: Provide evidence within the SIEM of account monitoring (logs).
+
+(h): Pass with Concerns: Provide supporting evidence of such notifications within the defined parameters.
+
+(i): Pass
+
+(j): Pass with Concerns: Provide evidence of such reviews.
+
+(k): Fail: Define the process for changing the authenticators when an individual is removed from a group.
+
+(l): Pass
+
+NOTE: While the attached policy is tailored to align with NIST and GovRAMP requirements, there must be context tied to SaltyCloud for the processes that are defined in the policy. ","No new evidence submitted as of 4/24/2025.
+(a): Pass with Concerns: Include parameters for accounts specifically prohibited.
+
+(b): Pass with Concerns: Define the roles/personnel representing account managers.
+
+(c): Pass with Concerns: What are the conditions?
+
+(d): Pass with Concerns: Specify access authorizations and defined attributes for each account.
+
+(e): Fail: Who/what personnel or roles perform the approvals?
+
+(f): Fail: Attach the policies and procedures that define the creation, enabling, modification, and disabling of accounts. 
+
+(g): Fail: Provide evidence within the SIEM of account monitoring (logs).
+
+(h): Pass with Concerns: Provide supporting evidence of such notifications within the defined parameters.
+
+(i): Pass
+
+(j): Pass with Concerns: Provide evidence of such reviews.
+
+(k): Fail: Define the process for changing the authenticators when an individual is removed from a group.
+
+(l): Pass
+
+NOTE: While the attached policy is tailored to align with NIST and GovRAMP requirements, there must be context tied to SaltyCloud for the processes that are defined in the policy. ","No new evidence submitted as of 1/14/2025.
+(a): Pass with Concerns: Include parameters for accounts specifically prohibited.
+
+(b): Pass with Concerns: Define the roles/personnel representing account managers.
+
+(c): Pass with Concerns: What are the conditions?
+
+(d): Pass with Concerns: Specify access authorizations and defined attributes for each account.
+
+(e): Fail: Who/what personnel or roles perform the approvals?
+
+(f): Fail: Attach the policies and procedures that define the creation, enabling, modification, and disabling of accounts. 
+
+(g): Fail: Provide evidence within the SIEM of account monitoring (logs).
+
+(h): Pass with Concerns: Provide supporting evidence of such notifications within the defined parameters.
+
+(i): Pass
+
+(j): Pass with Concerns: Provide evidence of such reviews.
+
+(k): Fail: Define the process for changing the authenticators when an individual is removed from a group.
+
+(l): Pass
+
+NOTE: While the attached policy is tailored to align with NIST and GovRAMP requirements, there must be context tied to SaltyCloud for the processes that are defined in the policy. ","(a): Pass with Concerns: Include parameters for accounts specifically prohibited.
+
+(b): Pass with Concerns: Define the roles/personnel representing account managers.
+
+(c): Pass with Concerns: What are the conditions?
+
+(d): Pass with Concerns: Specify access authorizations and defined attributes for each account.
+
+(e): Fail: Who/what personnel or roles perform the approvals?
+
+(f): Fail: Attach the policies and procedures that define the creation, enabling, modification, and disabling of accounts. 
+
+(g): Fail: Provide evidence within the SIEM of account monitoring (logs).
+
+(h): Pass with Concerns: Provide supporting evidence of such notifications within the defined parameters.
+
+(i): Pass
+
+(j): Pass with Concerns: Provide evidence of such reviews.
+
+(k): Fail: Define the process for changing the authenticators when an individual is removed from a group.
+
+(l): Pass
+
+NOTE: While the attached policy is tailored to align with NIST and GovRAMP requirements, there must be context tied to SaltyCloud for the processes that are defined in the policy. ",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+2,AC-02 (01),77.82,2.69%,ACCESS CONTROL,AC-2 (1),Account Management | Automated System Account Management,Support the management of system accounts using [Assignment: organization-defined automated mechanisms].,"Automated system account management includes using automated mechanisms to create, enable, modify, disable, and remove accounts; notify account managers when an account is created, enabled, modified, disabled, or removed, or when users are terminated or transferred; monitor system account usage; and report atypical system account usage. Automated mechanisms can include internal system functions and email, telephonic, and text messaging notifications.",,,,"• Configuration settings between HR System of Record and Information System showing automated on-boarding/off boarding.
+• Examples of automated email from HR System of Record to Account managers for on-boarding/off-boarding activities",Yes,2.69%,October-25,,"Pass with Concerns still present: While the new evidence demonstrates account existence and administrative access within AWS, it does not provide sufficient proof of automated onboarding and offboarding mechanisms tied to an automative HR source.",Pass with Concerns: Include further evidence from Gusto of automated procedures associated with onboarding/offboarding users.,Pass with Concerns still persist: Include further evidence from Gusto of automated procedures associated with onboarding/offboarding users.,Pass with Concerns still persist: Include further evidence from Gusto of automated procedures associated with onboarding/offboarding users.,Pass with Concerns still persist: Include further evidence from Gusto of automated procedures associated with onboarding/offboarding users.,Pass with Concerns: Include further evidence from Gusto of automated procedures associated with onboarding/offboarding users.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+3,AC-02 (07),84.68,2.92%,ACCESS CONTROL,AC-2 (7),Account Management | Privileged User Accounts,"a. Establish and administer privileged user accounts in accordance with [Selection: a role-based access scheme; an attribute-based access scheme];
+b. Monitor privileged role or attribute assignments;
+c. Monitor changes to roles or attributes; and
+d. Revoke access when privileged role or attribute assignments are no longer appropriate.","Privileged roles are organization-defined roles assigned to individuals that allow those individuals to perform certain security-relevant functions that ordinary users are not authorized to perform. Privileged roles include key management, account management, database administration, system and network administration, and web administration. A role-based access scheme organizes permitted system access and privileges into roles. In contrast, an attribute-based access scheme specifies allowed system access and privileges based on attributes.",,,,"• Helpdesk ticket or email requesting privileged user access has been revoked when no longer appropriate due to role change or termination
+• Details with evidence of the implemented access scheme
+• Audit records of user account changes/activity",No,0.00%,,,"(a): Pass with Concerns: New evidence shows who the privileged users are but it still does not clearly define the specific privileges associated with each privileged role or permission.
+
+(b): Pass with Concerns: New evidence shows general activity and not explicit monitoring of privileged account usage. Log events provided do not directly justify monitoring privileged accounts specifically.
+
+(c): Fail: Provide evidence of monitoring changes to roles. 
+
+(d): Fail: Provide evidence of access revocation for privileged roles when no longer applicable.","(a): Pass with Concerns: Define the privileges for admin users provided.
+
+(b): Pass with Concerns: Log events provided do not directly justify monitoring privileged accounts specifically.
+
+(c): Fail: Provide evidence of monitoring changes to roles. 
+
+(d): Fail: Provide evidence of access revocation for privileged roles when no longer applicable.",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+4,AC-04,33.88,1.17%,ACCESS CONTROL,AC-4,Information Flow Enforcement,Enforce approved authorizations for controlling the flow of information within the system and between connected systems based on [Assignment: organization-defined information flow control policies].,"Information flow control regulates where information can travel within a system and between systems (in contrast to who is allowed to access the information) and without regard to subsequent accesses to that information. Flow control restrictions include blocking external traffic that claims to be from within the organization, keeping export-controlled information from being transmitted in the clear to the Internet, restricting web requests that are not from the internal web proxy server, and limiting information transfers between organizations based on data structures and content. Transferring information between organizations may require an agreement specifying how the information flow is enforced (see CA-3). Transferring information between systems in different security or privacy domains with different security or privacy policies introduces the risk that such transfers violate one or more domain security or privacy policies. In such situations, information owners/stewards provide guidance at designated policy enforcement points between connected systems. Organizations consider mandating specific architectural solutions to enforce specific security and privacy policies. Enforcement includes prohibiting information transfers between connected systems (i.e., allowing access only), verifying write permissions before accepting information from another security or privacy domain or connected system, employing hardware mechanisms to enforce one-way information flows, and implementing trustworthy regrading mechanisms to reassign security or privacy attributes and labels.
+ Organizations commonly employ information flow control policies and enforcement mechanisms to control the flow of information between designated sources and destinations within systems and between connected systems. Flow control is based on the characteristics of the information and/or the information path. Enforcement occurs, for example, in boundary protection devices that employ rule sets or establish configuration settings that restrict system services, provide a packet-filtering capability based on header information, or provide a message-filtering capability based on message content. Organizations also consider the trustworthiness of filtering and/or inspection mechanisms (i.e., hardware, firmware, and software components) that are critical to information flow enforcement. Control enhancements 3 through 32 primarily address cross-domain solution needs that focus on more advanced filtering techniques, in-depth analysis, and stronger flow enforcement mechanisms implemented in cross-domain products, such as high-assurance guards. Such capabilities are generally not available in commercial off-the-shelf products. Information flow enforcement also applies to control plane traffic (e.g., routing and DNS).",,,,"• List of information flow authorizations and review 
+• Screenshot of system configuration settings
+• Information flow control policies/procedures
+• System design documentation/diagrams",Yes,1.17%,January-26,,Pass,Pass,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+5,AC-06,92.27,3.18%,ACCESS CONTROL,AC-6,Least Privilege,"Employ the principle of least privilege, allowing only authorized accesses for users (or processes acting on behalf of users) that are necessary to accomplish assigned organizational tasks.","Organizations employ least privilege for specific duties and systems. The principle of least privilege is also applied to system processes, ensuring that the processes have access to systems and operate at privilege levels no higher than necessary to accomplish organizational missions or business functions. Organizations consider the creation of additional processes, roles, and accounts as necessary to achieve least privilege. Organizations apply least privilege to the development, implementation, and operation of organizational systems.",,,,"• List of authorized administrative users compared to non-administrative users
+• List of the access authorizations (user privileges) assigned to different users/user types
+• List of Service Accounts
+• Evidence of user/system account right review",Yes,3.18%,October-25,,"Pass
+
+ The new evidence provided demonstrates enforcement of least privilege for administrative access through AWS IAM and Google Cloud IAM controls. However, evidence does not fully demonstrate least privilege enforcement for non-administrative users, system processes or service account. This will remain a pass since the 10/25 evidence has not expired",Pass,Passed in previous review.,Passed in previous review.,Passed in previous review.,Pass,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+6,AC-06 (02),92.27,3.18%,ACCESS CONTROL,AC-6 (2),Least Privilege | Non-privileged Access for Nonsecurity Functions,"Require that users of system accounts (or roles) with access to [Assignment: organization-defined security functions or security-relevant information] use non-privileged accounts or roles, when accessing nonsecurity functions.","Requiring the use of non-privileged accounts when accessing nonsecurity functions limits exposure when operating from within privileged accounts or roles. The inclusion of roles addresses situations where organizations implement access control policies, such as role-based access control, and where a change of role provides the same degree of assurance in the change of access authorizations for the user and the processes acting on behalf of the user as would be provided by a change between a privileged and non-privileged account.",AC-6 (2) [all security functions],"AC-6 (2) Guidance:  Examples of security functions include but are not limited to: establishing system accounts, configuring access authorizations (i.e., permissions, privileges), setting events to be audited, and setting intrusion detection parameters, system programming, system and security administration, other privileged functions.                            
+",,• Evidence of privileged users having a non-privileged account for normal activities and a separate account for administrative functions,Yes,3.18%,January-26,,Pass,Pass,Passed in previous review.,Passed in previous review.,Passed in previous review.,Pass,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+7,AC-06 (10),92.27,3.18%,ACCESS CONTROL,AC-6 (10),Least Privilege | Prohibit Non-privileged Users from Executing Privileged Functions,Prevent non-privileged users from executing privileged functions.,"Privileged functions include disabling, circumventing, or altering implemented security or privacy controls, establishing system accounts, performing system integrity checks, and administering cryptographic key management activities. Non-privileged users are individuals who do not possess appropriate authorizations. Privileged functions that require protection from non-privileged users include circumventing intrusion detection and prevention mechanisms or malicious code protection mechanisms. Preventing non-privileged users from executing privileged functions is enforced by AC-3.",,,,"• Evidence that non-privileged accounts do not have excess privileges allowing for administrative functions
+• Screenshot of pop-up (or similar alert) blocking a non-privileged user from taking a privileged action",Yes,3.18%,January-26,,Pass,Pass,Passed in previous review.,Passed in previous review.,Passed in previous review.,Pass,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+8,AC-17,30.86,1.07%,ACCESS CONTROL,AC-17,Remote Access,"a. Establish and document usage restrictions, configuration/connection requirements, and implementation guidance for each type of remote access allowed; and
+b. Authorize each type of remote access to the system prior to allowing such connections.","Remote access is access to organizational systems (or processes acting on behalf of users) that communicate through external networks such as the Internet. Types of remote access include dial-up, broadband, and wireless. Organizations use encrypted virtual private networks (VPNs) to enhance confidentiality and integrity for remote connections. The use of encrypted VPNs provides sufficient assurance to the organization that it can effectively treat such connections as internal networks if the cryptographic mechanisms used are implemented in accordance with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines. Still, VPN connections traverse external networks, and the encrypted VPN does not enhance the availability of remote connections. VPNs with encrypted tunnels can also affect the ability to adequately monitor network communications traffic for malicious code. Remote access controls apply to systems other than public web servers or systems designed for public access. Authorization of each remote access type addresses authorization prior to allowing remote access without specifying the specific formats for such authorization. While organizations may use information exchange and system connection security agreements to manage remote access connections to other systems, such agreements are addressed as part of CA-3. Enforcing access restrictions for remote access is addressed via AC-3.",,,,"• Screenshot of VPN settings
+• Screenshot of user remote access authorization
+• Procedures addressing remote access implementation and usage (including restrictions)
+• Network architecture diagram
+• Screenshot of network configuration settings ",Yes,1.07%,January-26,,"(a):Pass
+
+(b): Pass","(a): Fail: Provide official documentation of established usage restrictions and configurations for remote access.
+
+(b): Pass",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+9,AC-17 (02),30.86,1.07%,ACCESS CONTROL,AC-17 (2),Remote Access | Protection of Confidentiality and Integrity Using Encryption,Implement cryptographic mechanisms to protect the confidentiality and integrity of remote access sessions.,Virtual private networks can be used to protect the confidentiality and integrity of remote access sessions. Transport Layer Security (TLS) is an example of a cryptographic protocol that provides end-to-end communications security over networks and is used for Internet communications and online transactions.,,,,"Screenshot(s) reflecting encryption in place showing: 
+• AES-256 Minimum Required Encryption Cipher Strength
+• TLS 1.2 of higher (Compliant)
+",Yes,1.07%,January-26,,Pass,Pass,"Passed in previous review.
+NOTE: 
+Evidence is valid for one year. Due to insufficient notification from the GovRAMP PMO, several expired controls will retain a passing grade for this cycle.  To maintain the current score, all expired/expiring evidence needs to be updated before the next review. See Tab 7_Expired Evidence Dashboard for an overview of expired controls. The highlighted controls will need to be refreshed in the next review cycle to avoid a reduced score.",Passed in previous review.,Passed in previous review.,Passed in previous review.,Passed in previous review., , 
+10,AU-07,14.07,0.49%,AUDIT AND ACCOUNTABILITY,AU-7,Audit Record Reduction and Report Generation,"Provide and implement an audit record reduction and report generation capability that:
+ a. Supports on-demand audit record review, analysis, and reporting requirements and after-the-fact investigations of incidents; and
+ b. Does not alter the original content or time ordering of audit records.",Audit record reduction is a process that manipulates collected audit log information and organizes it into a summary format that is more meaningful to analysts. Audit record reduction and report generation capabilities do not always emanate from the same system or from the same organizational entities that conduct audit logging activities. The audit record reduction capability includes modern data mining techniques with advanced data filters to identify anomalous behavior in audit records. The report generation capability provided by the system can generate customizable reports. Time ordering of audit records can be an issue if the granularity of the timestamp in the record is insufficient.,,,,"• Evidence of audit reduction, review, analysis, and reporting tool such as a Security Information and Event Management (SIEM) tool
+• System audit records
+• Evidence that the tool in use does not alter original records",Yes,0.49%,January-26,,"(a): Pass with concerns - The evidence shows centralized collection and retention of audit logs; however, it does not clearly demonstrate on-demand audit record analysis, reduction or report generations.
+
+(b): Pass ",No new evidence submitted as of 10/15/2025.,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+11,AU-07 (01),14.07,0.49%,AUDIT AND ACCOUNTABILITY,AU-7 (1),Audit Record Reduction and Report Generation | Automatic Processing,"Provide and implement the capability to process, sort, and search audit records for events of interest based on the following content: [Assignment: organization-defined fields within audit records].","Events of interest can be identified by the content of audit records, including system resources involved, information objects accessed, identities of individuals, event types, event locations, event dates and times, Internet Protocol addresses involved, or event success or failure. Organizations may define event criteria to any degree of granularity required, such as locations selectable by a general networking location or by specific system component.",,,,"• Report from a SIEM tool
+• Evidence of sorting audit records within a SIEM tool
+• Evidence of searching for specific criteria with a SIEM tool",Yes,0.49%,January-26,,"Pass with concerns: While audit records are centrally collected and retained, the evidence does not demonstrate automated processing to sort, search, or analyze audit records based on organization-defined fields.",No new evidence submitted as of 10/15/2025.,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+12,AU-11,75.22,2.60%,AUDIT AND ACCOUNTABILITY,AU-11,Audit Record Retention,Retain audit records for [Assignment: organization-defined time period consistent with records retention policy] to provide support for after-the-fact investigations of incidents and to meet regulatory and organizational information retention requirements.,"Organizations retain audit records until it is determined that the records are no longer needed for administrative, legal, audit, or other operational purposes. This includes the retention and availability of audit records relative to Freedom of Information Act (FOIA) requests, subpoenas, and law enforcement actions. Organizations develop standard categories of audit records relative to such types of actions and standard response processes for each type of action. The National Archives and Records Administration (NARA) General Records Schedules provide federal policy on records retention.",AU-11 [a time period in compliance with government requirements],"AU-11 Requirement: The service provider retains audit records on-line for at least ninety days and further preserves audit records off-line for a period that is in accordance with NARA requirements. 
+",,"• SIEM logging tool and log retention settings
+• Evidence showing at least 90 days of online storage, and at least 1 year of offline or online storage per National Archives Records Administration (NARA) requirements",Yes,2.60%,October-25,,"Pass with Concerns: While audit logging and review activities are demonstrated, the evidence still does not include explicit audit log retention settings.","Pass with Concerns: For refreshed evidence, include retention settings.","Passed in previous review.
+NOTE: 
+Evidence is valid for one year. Due to insufficient notification from the GovRAMP PMO, several expired controls will retain a passing grade for this cycle.  To maintain the current score, all expired/expiring evidence needs to be updated before the next review. See Tab 7_Expired Evidence Dashboard for an overview of expired controls. The highlighted controls will need to be refreshed in the next review cycle to avoid a reduced score.",Passed in previous review.,Passed in previous review.,Passed in previous review.,Passed in previous review., , 
+13,CM-02,26.26,0.91%,CONFIGURATION MANAGEMENT,CM-2,Baseline Configuration,"a. Develop, document, and maintain under configuration control, a current baseline configuration of the system; and
+b. Review and update the baseline configuration of the system:
+ 1. [Assignment: organization-defined frequency];
+ 2. When required due to [Assignment: organization-defined circumstances]; and
+ 3. When system components are installed or upgraded.","Baseline configurations for systems and system components include connectivity, operational, and communications aspects of systems. Baseline configurations are documented, formally reviewed, and agreed-upon specifications for systems or configuration items within those systems. Baseline configurations serve as a basis for future builds, releases, or changes to systems and include security and privacy control implementations, operational procedures, information about system components, network topology, and logical placement of components in the system architecture. Maintaining baseline configurations requires creating new baselines as organizational systems change over time. Baseline configurations of systems reflect the current enterprise architecture.","CM-2 (b) (1) [at least annually and when a significant change occurs]
+CM-2 (b) (2) [to include when directed by the SAC]"," CM-2 (b) (1) Guidance: Significant change is defined in NIST Special Publication 800-37 Revision 2, Appendix F.
+",,"• Documentation of baseline configuration of information system 
+      • Hardware and software List
+      • System Hardening Standards (DISA STIGs [See CM-6], CIS Level 2 Benchmarks, etc.)
+• Change management/control records, documentation of changes made to the information system. Something to illustrate changes being logged, reviewed, approved, and updated accordingly.
+• Records or logs recorded for changes being approved or denied.",Yes,0.91%,January-26,,"(a): Pass.
+
+(b): Pass ","(a): Fail: Provide documentation of a developed current baseline for the system that is maintained under a configuration control process.
+
+(b): Pass with Concerns: Provide evidence of review/updates to the baseline configuration according to a defined frequency.",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+14,CM-02 (02),26.26,0.91%,CONFIGURATION MANAGEMENT,CM-2 (2),Baseline Configuration | Automation Support for Accuracy and Currency,"Maintain the currency, completeness, accuracy, and availability of the baseline configuration of the system using [Assignment: organization-defined automated mechanisms].","Automated mechanisms that help organizations maintain consistent baseline configurations for systems include configuration management tools, hardware, software, firmware inventory tools, and network management tools. Automated tools can be used at the organization level, mission and business process level, or system level on workstations, servers, notebook computers, network components, or mobile devices. Tools can be used to track version numbers on operating systems, applications, types of software installed, and current patch levels. Automation support for accuracy and currency can be satisfied by the implementation of CM-8 (2) for organizations that combine system component inventory and baseline configuration activities.",,,,"• Evidence of automated mechanisms used to maintain consistent baseline configurations, such as Active Directory GPOs, Teraform Scripts, DSC, etc.
+• Evidence of automatic reporting, alerting, or enforcement of systems' adherence to the baseline configurations",Yes,0.91%,January-26,,Pass,Pass,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+15,CM-04,30.77,1.06%,CONFIGURATION MANAGEMENT,CM-4,Impact Analyses,Analyze changes to the system to determine potential security and privacy impacts prior to change implementation.,"Organizational personnel with security or privacy responsibilities conduct impact analyses. Individuals conducting impact analyses possess the necessary skills and technical expertise to analyze the changes to systems as well as the security or privacy ramifications. Impact analyses include reviewing security and privacy plans, policies, and procedures to understand control requirements; reviewing system design documentation and operational procedures to understand control implementation and how specific system changes might affect the controls; reviewing the impact of changes on organizational supply chain partners with stakeholders; and determining how potential changes to a system create new risks to the privacy of individuals and the ability of implemented controls to mitigate those risks. Impact analyses also include risk assessments to understand the impact of the changes and determine if additional controls are required.",,,,"• Change Control Records showing a security impact analysis was conducted prior to the change implementation
+• Procedures addressing security impact analyses for changes to the system
+• Procedures addressing privacy impact analyses for changes to the system
+• Change control/management records (tickets, or other logging mechanism) showing security and privacy impact analysis",Yes,1.06%,January-26,,Pass,No new evidence submitted as of 10/15/2025.,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+16,CM-05,69.3,2.39%,CONFIGURATION MANAGEMENT,CM-5,Access Restrictions for Change,"Define, document, approve, and enforce physical and logical access restrictions associated with changes to the system.","Changes to the hardware, software, or firmware components of systems or the operational procedures related to the system can potentially have significant effects on the security of the systems or individuals’ privacy. Therefore, organizations permit only qualified and authorized individuals to access systems for purposes of initiating changes. Access restrictions include physical and logical access controls (see AC-3 and PE-3), software libraries, workflow automation, media libraries, abstract layers (i.e., changes implemented into external interfaces rather than directly into systems), and change windows (i.e., changes occur only during specified times).",,,,"• Evidence that only authorized individuals have access to systems for purposes of initiating changes
+• Documentation defining and stating the physcial and/or logical access restrictions to make changes within the system
+• Evidence of physical and/or logical access approvals for individuals to make changes to the system (tickets, change records)",Yes,2.39%,January-26,,Pass,Pass with Concerns: Document the implemented access restrictions within the Change Management Policy.,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+17,CM-05 (01),69.3,2.39%,CONFIGURATION MANAGEMENT,CM-5 (1),Access Restrictions for Change | Automated Access Enforcement and Audit Records,"a. Enforce access restrictions using [Assignment: organization-defined automated mechanisms]; and 
+b. Automatically generate audit records of the enforcement actions.",Organizations log system accesses associated with applying configuration changes to ensure that configuration change control is implemented and to support after-the-fact actions should organizations discover any unauthorized changes.,, ,,"• Screenshot or email of an alert triggered from unauthorized change attempt showing there is an automated access enforcement mechanism in place
+• Screenshot(s) of audit records of unauthorized change attempt
+• Evidence of other automated mechanisms in place to control access attempts or respond to unauthorized access attempts",Yes,2.39%,January-26,,"(a): Pass
+
+(b): Pass","(a): Pass
+
+(b): Pass",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+18,CM-05 (05),69.3,2.39%,CONFIGURATION MANAGEMENT,CM-5 (5),Access Restrictions for Change | Privilege Limitation for Production and Operation,"a. Limit privileges to change system components and system-related information within a production or operational environment; and
+b. Review and reevaluate privileges [Assignment: organization-defined frequency].","In many organizations, systems support multiple mission and business functions. Limiting privileges to change system components with respect to operational systems is necessary because changes to a system component may have far-reaching effects on mission and business processes supported by the system. The relationships between systems and mission/business processes are, in some cases, unknown to developers. System-related information includes operational procedures.",CM-5 (5) (b) [at least quarterly] , ,,"• Access control configurations demonstrating that access to change system functions are restricted
+• Audit records or screenshots showing denial of change attempts from unauthorized accounts
+• Evidence of quarterly review of account access privileges (meeting agenda/minutes, post-review change records/helpdesk tickets, etc.)",Yes,2.39%,January-26,,"(a): Pass
+
+(b): Pass","(a): Fail: Provide evidence of limiting privileges to change system components and system related information within the production or operational environment.
+
+(b): Fail: Provide evidence of an at least quarterly review of the account privileges related to making changes to system components.",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+19,CM-06,208.86,7.21%,CONFIGURATION MANAGEMENT,CM-6,Configuration Settings,"a. Establish and document configuration settings for components employed within the system that reflect the most restrictive mode consistent with operational requirements using [Assignment: organization-defined common secure configurations];
+b. Implement the configuration settings;
+c. Identify, document, and approve any deviations from established configuration settings for [Assignment: organization-defined system components] based on [Assignment: organization-defined operational requirements]; and
+d. Monitor and control changes to the configuration settings in accordance with organizational policies and procedures.","Configuration settings are the parameters that can be changed in the hardware, software, or firmware components of the system that affect the security and privacy posture or functionality of the system. Information technology products for which configuration settings can be defined include mainframe computers, servers, workstations, operating systems, mobile devices, input/output devices, protocols, and applications. Parameters that impact the security posture of systems include registry settings; account, file, or directory permission settings; and settings for functions, protocols, ports, services, and remote connections. Privacy parameters are parameters impacting the privacy posture of systems, including the parameters required to satisfy other privacy controls. Privacy parameters include settings for access controls, data processing preferences, and processing and retention permissions. Organizations establish organization-wide configuration settings and subsequently derive specific configuration settings for systems. The established settings become part of the configuration baseline for the system.
+ Common secure configurations (also known as security configuration checklists, lockdown and hardening guides, and security reference guides) provide recognized, standardized, and established benchmarks that stipulate secure configuration settings for information technology products and platforms as well as instructions for configuring those products or platforms to meet operational requirements. Common secure configurations can be developed by a variety of organizations, including information technology product developers, manufacturers, vendors, federal agencies, consortia, academia, industry, and other organizations in the public and private sectors.
+ Implementation of a common secure configuration may be mandated at the organization level, mission and business process level, system level, or at a higher level, including by a regulatory agency. Common secure configurations include the United States Government Configuration Baseline USGCB and security technical implementation guides (STIGs), which affect the implementation of CM-6 and other controls such as AC-19 and CM-7. The Security Content Automation Protocol (SCAP) and the defined standards within the protocol provide an effective method to uniquely identify, track, and control configuration settings.",,"CM-6 (a) Requirement 1:  The service provider shall use the DoD STIGs to establish configuration settings; Center for Internet Security up to Level 2 (CIS Level 2) guidelines shall be used if STIGs are not available; Custom baselines shall be used if CIS is not available.
+CM-6 (a) Requirement 2: The service provider shall ensure that checklists for configuration settings are Security Content Automation Protocol (SCAP) validated or SCAP compatible (if validated checklists are not available).
+
+CM-6 Guidance: Compliance checks are used to evaluate configuration settings and provide general insight into the overall effectiveness of configuration management activities. SPs and 3PAOs typically combine compliance check findings into a single CM-6 finding, which is acceptable. However, for initial assessments, annual assessments, and significant change requests, GovRAMP requires a clear understanding, on a per-control basis, where risks exist. Therefore, 3PAOs must also analyze compliance check findings as part of the controls assessment. Where a direct mapping exists, the 3PAO must document additional findings per control in the corresponding SAR Risk Exposure Table (RET), which are then documented in the SP’s Plan of Action and Milestones (POA&M). This will likely result in the details of individual control findings overlapping with those in the combined CM-6 finding, which is acceptable.
+During monthly continuous monitoring, new findings from SP compliance checks may be combined into a single CM-6 POA&M item. SPs are not required to map the findings to specific controls because controls are only assessed during initial assessments, annual assessments, and significant change requests.",,"• Evidence of DISA STIGs (see Column K for restrictions) being the established and documented configuration baselines for all applicable components
+• Three (3) months of  system compliance scan ( such as Nessus, Qualys, Rapid7) results using DISA STIGs.  
+• System Configuration settings checklist used to setup and configure the system
+• Configuration Management policy and procedures.
+• Configuration setting ( OS, Linux, database etc..) 
+• Evidence of documented and approved deviations from established configurations (DISA STIGs).
+• Evidence of monitoring changes to the baseline
+• Evidence of controlling changes to the baseline
+   
+
+",Yes,7.21%,January-26,,"(a): Pass
+
+(b): Pass
+
+(c): Pass
+
+(d): Pass","(a): Fail: Provide supporting documentation of the established configuration settings for components employed within the system. While the Configuration Management Policy is a good start in establishing official policy/procedure for Configuration Management, there must be further documentation provided of the actual implemented configuration settings. Note the requirements in Column K, the established configuration settings need to be DISA STIGs. If STIGs do not apply to the components, then CIS Level 2 benchmarks need to be the established baseline. Then CIS Level 1 if Level 2 does not apply. Then custom baselines if none of the previous are applicable.
+
+(b): Fail: Cannot located the artifacts for ""Use of hardened images: CIS EC2 image AWS config (CIS-IG2; NIST 800-53 mod)"".
+
+(c): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Evidence provided does not support the requirement of identifying, documenting, and approving deviations from the established configuration settings baselines.
+
+(d): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Specifically, sub-part (d) is requiring evidence of monitoring these changes to the configuration settings, as opposed to monitoring compliance progression within AWS. ","No new evidence submitted as of 7/24/2025.
+(a): Fail: Provide supporting documentation of the established configuration settings for components employed within the system. While the Configuration Management Policy is a good start in establishing official policy/procedure for Configuration Management, there must be further documentation provided of the actual implemented configuration settings. Note the requirements in Column K, the established configuration settings need to be DISA STIGs. If STIGs do not apply to the components, then CIS Level 2 benchmarks need to be the established baseline. Then CIS Level 1 if Level 2 does not apply. Then custom baselines if none of the previous are applicable.
+
+(b): Fail: Cannot located the artifacts for ""Use of hardened images: CIS EC2 image AWS config (CIS-IG2; NIST 800-53 mod)"".
+
+(c): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Evidence provided does not support the requirement of identifying, documenting, and approving deviations from the established configuration settings baselines.
+
+(d): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Specifically, sub-part (d) is requiring evidence of monitoring these changes to the configuration settings, as opposed to monitoring compliance progression within AWS. ","No new evidence submitted as of 4/24/2025.
+(a): Fail: Provide supporting documentation of the established configuration settings for components employed within the system. While the Configuration Management Policy is a good start in establishing official policy/procedure for Configuration Management, there must be further documentation provided of the actual implemented configuration settings. Note the requirements in Column K, the established configuration settings need to be DISA STIGs. If STIGs do not apply to the components, then CIS Level 2 benchmarks need to be the established baseline. Then CIS Level 1 if Level 2 does not apply. Then custom baselines if none of the previous are applicable.
+
+(b): Fail: Cannot located the artifacts for ""Use of hardened images: CIS EC2 image AWS config (CIS-IG2; NIST 800-53 mod)"".
+
+(c): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Evidence provided does not support the requirement of identifying, documenting, and approving deviations from the established configuration settings baselines.
+
+(d): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Specifically, sub-part (d) is requiring evidence of monitoring these changes to the configuration settings, as opposed to monitoring compliance progression within AWS. ","No new evidence submitted as of 1/14/2025.
+(a): Fail: Provide supporting documentation of the established configuration settings for components employed within the system. While the Configuration Management Policy is a good start in establishing official policy/procedure for Configuration Management, there must be further documentation provided of the actual implemented configuration settings. Note the requirements in Column K, the established configuration settings need to be DISA STIGs. If STIGs do not apply to the components, then CIS Level 2 benchmarks need to be the established baseline. Then CIS Level 1 if Level 2 does not apply. Then custom baselines if none of the previous are applicable.
+
+(b): Fail: Cannot located the artifacts for ""Use of hardened images: CIS EC2 image AWS config (CIS-IG2; NIST 800-53 mod)"".
+
+(c): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Evidence provided does not support the requirement of identifying, documenting, and approving deviations from the established configuration settings baselines.
+
+(d): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Specifically, sub-part (d) is requiring evidence of monitoring these changes to the configuration settings, as opposed to monitoring compliance progression within AWS. ","(a): Fail: Provide supporting documentation of the established configuration settings for components employed within the system. While the Configuration Management Policy is a good start in establishing official policy/procedure for Configuration Management, there must be further documentation provided of the actual implemented configuration settings. Note the requirements in Column K, the established configuration settings need to be DISA STIGs. If STIGs do not apply to the components, then CIS Level 2 benchmarks need to be the established baseline. Then CIS Level 1 if Level 2 does not apply. Then custom baselines if none of the previous are applicable.
+
+(b): Fail: Cannot located the artifacts for ""Use of hardened images: CIS EC2 image AWS config (CIS-IG2; NIST 800-53 mod)"".
+
+(c): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Evidence provided does not support the requirement of identifying, documenting, and approving deviations from the established configuration settings baselines.
+
+(d): Fail: AWS artifacts presented align towards tracking and reporting NIST compliance progression within AWS; this control and its sub-parts pertain to establishing the most restrictive form of configuration settings for the system. Specifically, sub-part (d) is requiring evidence of monitoring these changes to the configuration settings, as opposed to monitoring compliance progression within AWS. ",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024.,
+20,CM-06 (01),178.09,6.15%,CONFIGURATION MANAGEMENT,CM-6 (1),"Configuration Settings | Automated Management, Application, and Verification","Manage, apply, and verify configuration settings for [Assignment: organization-defined system components] using [Assignment: organization-defined automated mechanisms].","Automated tools (e.g., hardening tools, baseline configuration tools) can improve the accuracy, consistency, and availability of configuration settings information. Automation can also provide data aggregation and data correlation capabilities, alerting mechanisms, and dashboards to support risk-based decision-making within the organization.",, ,,"• Scan results using DISA STIGs.  ( such as Nessus, Qualys, Rapid7)
+• Evidence of automated tools in place to apply established configuration settings
+• Evidence of automated tools in place to correct configuration settings back to the established baselines
+• Evidence of automated tools in palce to verify configurations settings (dashboards, reports, alerts, etc.)",Yes,6.15%,January-26,,Pass,"Fail: While the AWS Inspector screenshot is strong evidence to support vulnerability management, this control requires the management, application, and verification of configuration settings utilizing automated mechanisms and tools. The AMI CISv8 and AWS Config Dashboard screenshots are closer to attesting to the requirements, however, the screenshots do not display any automation settings to manage configurations. It is suggested to dig deeper within the AWS Config Dashboard (rules, resources, advanced queries, settings) to show implemented automated management of configuration settings.","No new evidence submitted as of 7/24/2025.
+Fail: While the AWS Inspector screenshot is strong evidence to support vulnerability management, this control requires the management, application, and verification of configuration settings utilizing automated mechanisms and tools. The AMI CISv8 and AWS Config Dashboard screenshots are closer to attesting to the requirements, however, the screenshots do not display any automation settings to manage configurations. It is suggested to dig deeper within the AWS Config Dashboard (rules, resources, advanced queries, settings) to show implemented automated management of configuration settings.","No new evidence submitted as of 4/24/2025.
+Fail: While the AWS Inspector screenshot is strong evidence to support vulnerability management, this control requires the management, application, and verification of configuration settings utilizing automated mechanisms and tools. The AMI CISv8 and AWS Config Dashboard screenshots are closer to attesting to the requirements, however, the screenshots do not display any automation settings to manage configurations. It is suggested to dig deeper within the AWS Config Dashboard (rules, resources, advanced queries, settings) to show implemented automated management of configuration settings.","No new evidence submitted as of 1/14/2025.
+Fail: While the AWS Inspector screenshot is strong evidence to support vulnerability management, this control requires the management, application, and verification of configuration settings utilizing automated mechanisms and tools. The AMI CISv8 and AWS Config Dashboard screenshots are closer to attesting to the requirements, however, the screenshots do not display any automation settings to manage configurations. It is suggested to dig deeper within the AWS Config Dashboard (rules, resources, advanced queries, settings) to show implemented automated management of configuration settings.","Fail: While the AWS Inspector screenshot is strong evidence to support vulnerability management, this control requires the management, application, and verification of configuration settings utilizing automated mechanisms and tools. The AMI CISv8 and AWS Config Dashboard screenshots are closer to attesting to the requirements, however, the screenshots do not display any automation settings to manage configurations. It is suggested to dig deeper within the AWS Config Dashboard (rules, resources, advanced queries, settings) to show implemented automated management of configuration settings.",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+21,CM-09,30.77,1.06%,CONFIGURATION MANAGEMENT,CM-9,Configuration Management Plan,"Develop, document, and implement a configuration management plan for the system that:
+ a. Addresses roles, responsibilities, and configuration management processes and procedures;
+ b. Establishes a process for identifying configuration items throughout the system development life cycle and for managing the configuration of the configuration items;
+ c. Defines the configuration items for the system and places the configuration items under configuration management;
+ d. Is reviewed and approved by [Assignment: organization-defined personnel or roles]; and
+ e. Protects the configuration management plan from unauthorized disclosure and modification.","Configuration management activities occur throughout the system development life cycle. As such, there are developmental configuration management activities (e.g., the control of code and software libraries) and operational configuration management activities (e.g., control of installed components and how the components are configured). Configuration management plans satisfy the requirements in configuration management policies while being tailored to individual systems. Configuration management plans define processes and procedures for how configuration management is used to support system development life cycle activities.
+ Configuration management plans are generated during the development and acquisition stage of the system development life cycle. The plans describe how to advance changes through change management processes; update configuration settings and baselines; maintain component inventories; control development, test, and operational environments; and develop, release, and update key documents.
+ Organizations can employ templates to help ensure the consistent and timely development and implementation of configuration management plans. Templates can represent a configuration management plan for the organization with subsets of the plan implemented on a system by system basis. Configuration management approval processes include the designation of key stakeholders responsible for reviewing and approving proposed changes to systems, and personnel who conduct security and privacy impact analyses prior to the implementation of changes to the systems. Configuration items are the system components, such as the hardware, software, firmware, and documentation to be configuration-managed. As systems continue through the system development life cycle, new configuration items may be identified, and some existing configuration items may no longer need to be under configuration control.",,"CM-9 Guidance: GovRAMP does not provide a template for the Configuration Management Plan. However, NIST SP 800-128, Guide for Security-Focused Configuration Management of Information Systems, provides guidelines for the implementation of CM controls as well as a sample CMP outline in Appendix D of the Guide",,"• Configuration Management Plan (containing signatures of approval by designated personnel or roles)
+• Configuration Management Policies and Procedures.
+• Evidence that the Configuration Management Plan is protected from unauthorized disclosure and modification (secure file repository)",Yes,1.06%,January-26,,"(a): Pass
+
+(b): Pass
+
+(c): Pass
+
+(d): Pass
+
+(e): Pass",No new evidence submitted as of 10/15/2025.,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,"The 2023 evidence was listed as draft.  The CMP will need to be an approved version.
+CM-9 Guidance: GovRAMP does not provide a template for the Configuration Management Plan. However, NIST SP 800-128, Guide for Security-Focused Configuration Management of Information Systems, provides guidelines for the implementation of CM controls as well as a sample CMP outline in Appendix D of the Guide","The 2023 evidence was listed as draft.  The CMP will need to be an approved version.
+CM-9 Guidance: GovRAMP does not provide a template for the Configuration Management Plan. However, NIST SP 800-128, Guide for Security-Focused Configuration Management of Information Systems, provides guidelines for the implementation of CM controls as well as a sample CMP outline in Appendix D of the Guide"
+22,IA-02,147.85,5.10%,IDENTIFICATION AND AUTHENTICATION,IA-2,Identification and Authentication (organizational Users),Uniquely identify and authenticate organizational users and associate that unique identification with processes acting on behalf of those users.,"Organizations can satisfy the identification and authentication requirements by complying with the requirements in HSPD 12. Organizational users include employees or individuals who organizations consider to have an equivalent status to employees (e.g., contractors and guest researchers). Unique identification and authentication of users applies to all accesses other than those that are explicitly identified in AC-14 and that occur through the authorized use of group authenticators without individual authentication. Since processes execute on behalf of groups and roles, organizations may require unique identification of individuals in group accounts or for detailed accountability of individual activity.
+ Organizations employ passwords, physical authenticators, or biometrics to authenticate user identities or, in the case of multi-factor authentication, some combination thereof. Access to organizational systems is defined as either local access or network access. Local access is any access to organizational systems by users or processes acting on behalf of users, where access is obtained through direct connections without the use of networks. Network access is access to organizational systems by users (or processes acting on behalf of users) where access is obtained through network connections (i.e., nonlocal accesses). Remote access is a type of network access that involves communication through external networks. Internal networks include local area networks and wide area networks.
+ The use of encrypted virtual private networks for network connections between organization-controlled endpoints and non-organization-controlled endpoints may be treated as internal networks with respect to protecting the confidentiality and integrity of information traversing the network. Identification and authentication requirements for non-organizational users are described in IA-8.",,"IA-2 Requirement: For all control enhancements that specify multifactor authentication, the implementation must adhere to the Digital Identity Guidelines specified in NIST Special Publication 800-63B.
+
+IA-2 Requirement: Multi-factor authentication must be phishing-resistant.
+
+IA-2 Requirement: All uses of encrypted virtual private networks must meet all applicable State requirements and architecture, dataflow, and security and privacy controls must be documented, assessed, and authorized to operate.
+
+IA-2 Guidance: “Phishing-resistant"" authentication refers to authentication processes designed to detect and prevent disclosure of authentication secrets and outputs to a website or application masquerading as a legitimate system. ",,"• List of system users and group accounts for both infrastructure and application showing unique accounts and unique IDs
+• List of system service accounts for both infrastructure and application showing unique IDs, and individuals that have access to those accounts
+• Identification and authentication policy
+• Procedures addressing user identification and authentication",Yes,5.10%,October-25,,"Pass
+
+
+Concerns for new evidence: The new evidence does not demonstrate technical enforcement of phishing-resistant MFA nor does it clearly show conditional access controls or full privileged user mappings. This will remain a pass since the 10/25 evidence has not expired",Pass,"Passed in previous review.
+NOTE: 
+Evidence is valid for one year. Due to insufficient notification from the GovRAMP PMO, several expired controls will retain a passing grade for this cycle.  To maintain the current score, all expired/expiring evidence needs to be updated before the next review. See Tab 7_Expired Evidence Dashboard for an overview of expired controls. The highlighted controls will need to be refreshed in the next review cycle to avoid a reduced score.",Passed in previous review.,Passed in previous review.,Passed in previous review.,Passed in previous review., Pass, 
+23,IA-02 (01),147.85,5.10%,IDENTIFICATION AND AUTHENTICATION,IA-2 (1),Identification and Authentication (organizational Users) | Multi-factor Authentication to Privileged Accounts,Implement multi-factor authentication for access to privileged accounts.,"Multi-factor authentication requires the use of two or more different factors to achieve authentication. The authentication factors are defined as follows: something you know (e.g., a personal identification number [PIN]), something you have (e.g., a physical authenticator such as a cryptographic private key), or something you are (e.g., a biometric). Multi-factor authentication solutions that feature physical authenticators include hardware authenticators that provide time-based or challenge-response outputs and smart cards such as the U.S. Government Personal Identity Verification (PIV) card or the Department of Defense (DoD) Common Access Card (CAC). In addition to authenticating users at the system level (i.e., at logon), organizations may employ authentication mechanisms at the application level, at their discretion, to provide increased security. Regardless of the type of access (i.e., local, network, remote), privileged accounts are authenticated using multi-factor options appropriate for the level of risk. Organizations can add additional security measures, such as additional or more rigorous authentication mechanisms, for specific types of access.",,"IA-2 (1) Requirement: According to SP 800-63-3, SP 800-63A (IAL), SP 800-63B (AAL), and SP 800-63C (FAL).
+
+IA-2 (1) Requirement: Multi-factor authentication must be phishing-resistant.
+
+IA-2 (1) Guidance: Multi-factor authentication to subsequent components in the same user domain is not required.",,"• Screenshot showing phishing-resistant multifactor authentication mechanisms, such as Duo Push with Verify, or PIV/CAC card integration
+[https://www.cisa.gov/sites/default/files/publications/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf]
+• Screenshots showing an individual going through the MFA steps/process",Yes,5.10%,October-25,,"Pass
+
+ The new evidence shows MFA is implemented and enforced but not all allowed MFA methods are phishing resistant. This will remain a pass since the 10/25 evidence has not expired",Pass,"Passed in previous review.
+NOTE: 
+Evidence is valid for one year. Due to insufficient notification from the GovRAMP PMO, several expired controls will retain a passing grade for this cycle.  To maintain the current score, all expired/expiring evidence needs to be updated before the next review. See Tab 7_Expired Evidence Dashboard for an overview of expired controls. The highlighted controls will need to be refreshed in the next review cycle to avoid a reduced score.",Passed in previous review.,Passed in previous review.,Passed in previous review.,Passed in previous review.,Pass, Additional evidence to support that MFA implemented for privileged accounts must be phishing-resistant.
+24,IA-05,55.67,1.92%,IDENTIFICATION AND AUTHENTICATION,IA-5,Authenticator Management,"Manage system authenticators by:
+ a. Verifying, as part of the initial authenticator distribution, the identity of the individual, group, role, service, or device receiving the authenticator;
+ b. Establishing initial authenticator content for any authenticators issued by the organization;
+ c. Ensuring that authenticators have sufficient strength of mechanism for their intended use;
+ d. Establishing and implementing administrative procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators;
+ e. Changing default authenticators prior to first use;
+ f. Changing or refreshing authenticators [Assignment: organization-defined time period by authenticator type] or when [Assignment: organization-defined events] occur;
+ g. Protecting authenticator content from unauthorized disclosure and modification;
+ h. Requiring individuals to take, and having devices implement, specific controls to protect authenticators; and
+ i. Changing authenticators for group or role accounts when membership to those accounts changes.","Authenticators include passwords, cryptographic devices, biometrics, certificates, one-time password devices, and ID badges. Device authenticators include certificates and passwords. Initial authenticator content is the actual content of the authenticator (e.g., the initial password). In contrast, the requirements for authenticator content contain specific criteria or characteristics (e.g., minimum password length). Developers may deliver system components with factory default authentication credentials (i.e., passwords) to allow for initial installation and configuration. Default authentication credentials are often well known, easily discoverable, and present a significant risk. The requirement to protect individual authenticators may be implemented via control PL-4 or PS-6 for authenticators in the possession of individuals and by controls AC-3, AC-6, and SC-28 for authenticators stored in organizational systems, including passwords stored in hashed or encrypted formats or files containing encrypted or hashed passwords accessible with administrator privileges.
+ Systems support authenticator management by organization-defined settings and restrictions for various authenticator characteristics (e.g., minimum password length, validation time window for time synchronous one-time tokens, and number of allowed rejections during the verification stage of biometric authentication). Actions can be taken to safeguard individual authenticators, including maintaining possession of authenticators, not sharing authenticators with others, and immediately reporting lost, stolen, or compromised authenticators. Authenticator management includes issuing and revoking authenticators for temporary access when no longer needed.",,"IA-5 Requirement: Authenticators must be compliant with NIST SP 800-63-3 Digital Identity Guidelines IAL, AAL, FAL level 2. Link https://pages.nist.gov/800-63-3
+
+IA-5 Guidance: SP 800-63C Section 6.2.3 Encrypted Assertion requires that authentication assertions be encrypted when passed through third parties, such as a browser. For example, a SAML assertion can be encrypted using XML-Encryption, or an OpenID Connect ID Token can be encrypted using JSON Web Encryption (JWE). ",,"• Password policy and procedure 
+• Identification and Authentication policy and procedure that address all parts of the control description
+• Screenshot of password complexity requirements being listed in application login.
+• Screenshot of password requirements in infrastructure directory services such as Active Directory, if applicable.
+• Written policies and procedures that enforce the changing of default authenticators (like passwords) before the first use of the system, device, or application.  Or screen shots showing enforcement at the Directory level
+• Audit logs and monitoring records showing regular monitoring and auditing of authenticators (passwords, MFA token, PIV)
+• Listing of users with access to service, group, or role accounts and any change ticket/request made to those service accounts due to changes in access.
+• Change control/management records associated with managing system authenticators
+• List of system authenticator types",Yes,1.92%,January-26,,"(a): Pass
+
+(b): Pass
+
+(c): Pass
+
+(d): Pass
+
+(e): Pass
+
+(f): Pass with concerns - The evidence provided enforces centralized identity management through Google Workspace SSO and AWS IAM Identity Center, which support resetting and revoking authenticators upon account compromise, role changes or access termination. While policy documentation indicates that authenticator refresh actions are performed as needed, the evidence not include procedural artifact or screenshot demonstrating execution of an authenticator reset event.
+
+(g): Pass
+
+(h): Pass
+
+(i): Pass","(a): Fail: Provide evidence or documentation of verifying identities before distributing initial authenticators.
+
+(b): Fail: Provide evidence or documentation of establishing initial authenticator content (password) for any authenticators issued by the organization. See the NIST Discussion for more information (Column I).
+
+(c): Pass
+
+(d): Fail: Provide documentation of implemented procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators.
+
+(e): Fail: Provide evidence that default authenticators are changed prior to first use.
+
+(f): Fail: Provide evidence of when passwords are refreshed/changed.
+
+(g): Fail: Provide evidence that authenticators are protected from unauthorized disclosure and authentication.
+
+(h): Fail: Provide evidence or documentation on the specific controls individuals take and devices implement to protect authenticators.
+
+(i): Fail: Provide evidence or documentation for changing authenticators to group or role accounts when membership changes.","No new evidence submitted as of 7/24/2025.
+(a): Fail: Provide evidence or documentation of verifying identities before distributing initial authenticators.
+
+(b): Fail: Provide evidence or documentation of establishing initial authenticator content (password) for any authenticators issued by the organization. See the NIST Discussion for more information (Column I).
+
+(c): Pass
+
+(d): Fail: Provide documentation of implemented procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators.
+
+(e): Fail: Provide evidence that default authenticators are changed prior to first use.
+
+(f): Fail: Provide evidence of when passwords are refreshed/changed.
+
+(g): Fail: Provide evidence that authenticators are protected from unauthorized disclosure and authentication.
+
+(h): Fail: Provide evidence or documentation on the specific controls individuals take and devices implement to protect authenticators.
+
+(i): Fail: Provide evidence or documentation for changing authenticators to group or role accounts when membership changes.","No new evidence submitted as of 4/24/2025.
+(a): Fail: Provide evidence or documentation of verifying identities before distributing initial authenticators.
+
+(b): Fail: Provide evidence or documentation of establishing initial authenticator content (password) for any authenticators issued by the organization. See the NIST Discussion for more information (Column I).
+
+(c): Pass
+
+(d): Fail: Provide documentation of implemented procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators.
+
+(e): Fail: Provide evidence that default authenticators are changed prior to first use.
+
+(f): Fail: Provide evidence of when passwords are refreshed/changed.
+
+(g): Fail: Provide evidence that authenticators are protected from unauthorized disclosure and authentication.
+
+(h): Fail: Provide evidence or documentation on the specific controls individuals take and devices implement to protect authenticators.
+
+(i): Fail: Provide evidence or documentation for changing authenticators to group or role accounts when membership changes.","No new evidence submitted as of 1/14/2025.
+(a): Fail: Provide evidence or documentation of verifying identities before distributing initial authenticators.
+
+(b): Fail: Provide evidence or documentation of establishing initial authenticator content (password) for any authenticators issued by the organization. See the NIST Discussion for more information (Column I).
+
+(c): Pass
+
+(d): Fail: Provide documentation of implemented procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators.
+
+(e): Fail: Provide evidence that default authenticators are changed prior to first use.
+
+(f): Fail: Provide evidence of when passwords are refreshed/changed.
+
+(g): Fail: Provide evidence that authenticators are protected from unauthorized disclosure and authentication.
+
+(h): Fail: Provide evidence or documentation on the specific controls individuals take and devices implement to protect authenticators.
+
+(i): Fail: Provide evidence or documentation for changing authenticators to group or role accounts when membership changes.","(a): Fail: Provide evidence or documentation of verifying identities before distributing initial authenticators.
+
+(b): Fail: Provide evidence or documentation of establishing initial authenticator content (password) for any authenticators issued by the organization. See the NIST Discussion for more information (Column I).
+
+(c): Pass
+
+(d): Fail: Provide documentation of implemented procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators.
+
+(e): Fail: Provide evidence that default authenticators are changed prior to first use.
+
+(f): Fail: Provide evidence of when passwords are refreshed/changed.
+
+(g): Fail: Provide evidence that authenticators are protected from unauthorized disclosure and authentication.
+
+(h): Fail: Provide evidence or documentation on the specific controls individuals take and devices implement to protect authenticators.
+
+(i): Fail: Provide evidence or documentation for changing authenticators to group or role accounts when membership changes.",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+25,IA-05 (01),51.05,1.76%,IDENTIFICATION AND AUTHENTICATION,IA-5 (1),Authenticator Management | Password-based Authentication,"For password-based authentication:
+ a. Maintain a list of commonly-used, expected, or compromised passwords and update the list [Assignment: organization-defined frequency] and when organizational passwords are suspected to have been compromised directly or indirectly;
+ b. Verify, when users create or update passwords, that the passwords are not found on the list of commonly-used, expected, or compromised passwords in IA-5 (1) (a);
+ c. Transmit passwords only over cryptographically-protected channels;
+ d. Store passwords using an approved salted key derivation function, preferably using a keyed hash;
+ e. Require immediate selection of a new password upon account recovery;
+ f. Allow user selection of long passwords and passphrases, including spaces and all printable characters;
+ g. Employ automated tools to assist the user in selecting strong password authenticators; and
+ h. Enforce the following composition and complexity rules: [Assignment: organization-defined composition and complexity rules].","Password-based authentication applies to passwords regardless of whether they are used in single-factor or multi-factor authentication. Long passwords or passphrases are preferable over shorter passwords. Enforced composition rules provide marginal security benefits while decreasing usability. However, organizations may choose to establish certain rules for password generation (e.g., minimum character length for long passwords) under certain circumstances and can enforce this requirement in IA-5 (1) (h). Account recovery can occur, for example, in situations when a password is forgotten. Cryptographically protected passwords include salted one-way cryptographic hashes of passwords. The list of commonly used, compromised, or expected passwords includes passwords obtained from previous breach corpuses, dictionary words, and repetitive or sequential characters. The list includes context-specific words, such as the name of the service, username, and derivatives thereof.",,"IA-5 (1) Requirement: Password policies must be compliant with NIST SP 800-63B for all memorized, lookup, out-of-band, or One-Time-Passwords (OTP). Password policies shall not enforce special character or minimum password rotation requirements for memorized secrets of users.
+
+IA-5 (1) (h) Requirement: For cases where technology doesn’t allow multi-factor authentication, these rules should be enforced: 14 characters minimum and must support all printable ASCII characters.
+
+For emergency use accounts, these rules should be enforced: 14 characters minimum, must support all printable ASCII characters, and passwords must be changed if used.
+ 
+IA-5 (1) Guidance: Note that (c) and (d) require the use of cryptography which must be compliant with State requirements and utilize FIPS Compliant or NSA approved cryptography (see SC-13.)",,"• Authentication related policies and procedures
+• Screenshot of implemented configuration that checks against commonly-used, expected, or compromised passwords. 
+• Screenshot of current security certificates (SSL/TLS) used for encrypting transmission of login page. This may include details on the certificate authority, expiration date, and encryption standards.
+• Screenshots of system configuration settings showing that passwords are stored in a cryptographically protected form, such as hashed passwords.
+• Documentation detailing the organization's policies and procedures for password resets, including the immediate selection of a new password upon unlocking of account.
+• Evidence that shows the ability for users to create long passwords and passphrases with all printable characters and spaces
+• Screenshots from user where the password creation process occurs, illustrating the presence and use of automated tools (like strength meters or complexity guidelines) during password setup.
+• Screenshot of configured composition and complexity rules for passwords",No,0.00%,,,"
+(a):Fail -  The narrative document mentions enforcement of and automated screening against commonly used or compromised passwords within Google Workspace; however, it does not show the existence of a maintained list of commonly used, expected or compromised passwords. No configuration or system output or vendor documentation was provided to demonstrate that passwords are screened against a prohibited or breach-derived password list.
+
+(b):Fail - No evidence demonstrating the existence of a prohibited password list. Provide evidence of maintaining a list of commonly used, expected, or compromised passwords and verify that the passwords are not found on the list when users create or update passwords.
+
+(c): Pass with concerns - Authentication traffic is handled through Google Workspace Single Sign-on and AWS IAM Identity Center, which are cloud-managed identity services designed to transmit credentials over TLS encrypted channels. However, the provided evidence does not explicitly demonstrate transport-layer encryption settings or protocol enforcement within the system configuration.
+
+(d): Pass with concerns - While Google Workspace and AWS managed authentication services store passwords using approved mechanism, there are no cryptographic configuration details shown in the evidence. Again, this is implied and not explicitly stated.
+
+(e): Provide evidence or documentation of requiring immediate selection of a new password upon recovering an account from compromise or damage.
+
+(f): Fail - The Google Workspace password policy evidence confirms a minimum password length of 14 characters and a maximum of 100 characters. However, the evidence does not demonstrate that space and all printable characters are explicitly permitted nor does it confirm passphrases.
+
+(g): Provide evidence of users having access to an automated tool to help them select strong password authenticators.
+
+(h): Pass","Fail:
+(a): Provide evidence of maintaining a list of commonly used, expected, or compromised passwords and verify that the passwords are not found on the list when users create or update passwords.
+
+(b): Provide evidence of maintaining a list of commonly used, expected, or compromised passwords and verify that the passwords are not found on the list when users create or update passwords.
+
+(c): Provide evidence that passwords are only transmitted over cryptographically-protected channels.
+
+(d): Provide evidence that passwords are stored using an approved salted key derivation function.
+
+(e): Provide evidence or documentation of requiring immediate selection of a new password upon recovering an account from compromise or damage.
+
+(f): Provide evidence of allowing users to select long passwords and passphrases including spaces and all printable characters.
+
+(g): Provide evidence of users having access to an automated tool to help them select strong password authenticators.
+
+(h): Provide evidence of the composition and complexity rules that are enforced.",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+26,IR-04,64.21,2.22%,INCIDENT RESPONSE,IR-4,Incident Handling,"a. Implement an incident handling capability for incidents that is consistent with the incident response plan and includes preparation, detection and analysis, containment, eradication, and recovery;
+b. Coordinate incident handling activities with contingency planning activities;
+c. Incorporate lessons learned from ongoing incident handling activities into incident response procedures, training, and testing, and implement the resulting changes accordingly; and
+d. Ensure the rigor, intensity, scope, and results of incident handling activities are comparable and predictable across the organization.","Organizations recognize that incident response capabilities are dependent on the capabilities of organizational systems and the mission and business processes being supported by those systems. Organizations consider incident response as part of the definition, design, and development of mission and business processes and systems. Incident-related information can be obtained from a variety of sources, including audit monitoring, physical access monitoring, and network monitoring; user or administrator reports; and reported supply chain events. An effective incident handling capability includes coordination among many organizational entities (e.g., mission or business owners, system owners, authorizing officials, human resources offices, physical security offices, personnel security offices, legal departments, risk executive [function], operations personnel, procurement offices). Suspected security incidents include the receipt of suspicious email communications that can contain malicious code. Suspected supply chain incidents include the insertion of counterfeit hardware or malicious code into organizational systems or system components. For federal agencies, an incident that involves personally identifiable information is considered a breach. A breach results in unauthorized disclosure, the loss of control, unauthorized acquisition, compromise, or a similar occurrence where a person other than an authorized user accesses or potentially accesses personally identifiable information or an authorized user accesses or potentially accesses such information for other than authorized purposes.",,"IR-4 Requirement: The FISMA definition of ""incident"" shall be used: ""An occurrence that actually or imminently jeopardizes, without lawful authority, the confidentiality, integrity, or availability of information or an information system; or constitutes a violation or imminent threat of violation of law, security policies, security procedures, or acceptable use policies.""
+
+IR-4 Requirement: The service provider ensures that individuals conducting incident handling meet personnel security requirements commensurate with the criticality/sensitivity of the information being processed, stored, and transmitted by the information system.
+",,"• Incident Response Plan
+• Incident Response Policy and Procedure
+• Incident Response Report (documentation of actual incident response)
+• Incident Resposne Playbooks and/or checklists
+• Incident Response flow chart
+• Contigency Planning documentation and/or Incident Response documentation showing coordination between the two activities
+• Incident Response Plan Test Results",Yes,2.22%,October-25,,"(a): Pass
+
+(b): Pass with Concerns still present: While the new evidence shows technical proof of coordination, it has not been explicitly documented. Detail what contingency planning activities would coordinate with incident handling activities (Business Continuity and Disaster Recovery mechanisms).
+
+(c): Pass
+
+(d): Pass
+
+","(a): Pass
+
+(b): Pass with Concerns: Detail what contingency planning activities would coordinate with incident handling activities (Business Continuity and Disaster Recovery mechanisms).
+
+(c): Pass
+
+(d): Pass","PASSED IN PREVIOUS REVIEW
+(a): Pass
+
+(b): Pass with Concerns: Detail what contingency planning activities would coordinate with incident handling activities (Business Continuity and Disaster Recovery mechanisms).
+
+(c): Pass
+
+(d): Pass","PASSED IN PREVIOUS REVIEW
+(a): Pass
+
+(b): Pass with Concerns: Detail what contingency planning activities would coordinate with incident handling activities (Business Continuity and Disaster Recovery mechanisms).
+
+(c): Pass
+
+(d): Pass","PASSED IN PREVIOUS REVIEW
+(a): Pass
+
+(b): Pass with Concerns: Detail what contingency planning activities would coordinate with incident handling activities (Business Continuity and Disaster Recovery mechanisms).
+
+(c): Pass
+
+(d): Pass","(a): Pass
+
+(b): Pass with Concerns: Detail what contingency planning activities would coordinate with incident handling activities (Business Continuity and Disaster Recovery mechanisms).
+
+(c): Pass
+
+(d): Pass",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+27,IR-04 (01),64.21,2.22%,INCIDENT RESPONSE,IR-4 (1),Incident Handling | Automated Incident Handling Processes,Support the incident handling process using [Assignment: organization-defined automated mechanisms].,"Automated mechanisms that support incident handling processes include online incident management systems and tools that support the collection of live response data, full network packet capture, and forensic analysis.",,,,"• Examples of automated alerts from organization's Security Information and Event Management (SIEM) tool or Host Based Security System (HBSS) tool.
+• Screenshot of organization's Security Information and Event Management (SIEM) tool or Host Based Security System (HBSS) configuration settings showing alerting rules.
+• Examples of automated analysis of suspected incidents",Yes,2.22%,January-26,,Pass,Fail: Provide evidence from a SIEM tool automatically triaging IR alerts.,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+28,MA-03,25.65,0.89%,MAINTENANCE,MA-3,Maintenance Tools,"a. Approve, control, and monitor the use of system maintenance tools; and
+b. Review previously approved system maintenance tools [Assignment: organization-defined frequency].","Approving, controlling, monitoring, and reviewing maintenance tools address security-related issues associated with maintenance tools that are not within system authorization boundaries and are used specifically for diagnostic and repair actions on organizational systems. Organizations have flexibility in determining roles for the approval of maintenance tools and how that approval is documented. A periodic review of maintenance tools facilitates the withdrawal of approval for outdated, unsupported, irrelevant, or no-longer-used tools. Maintenance tools can include hardware, software, and firmware items and may be pre-installed, brought in with maintenance personnel on media, cloud-based, or downloaded from a website. Such tools can be vehicles for transporting malicious code, either intentionally or unintentionally, into a facility and subsequently into systems. Maintenance tools can include hardware and software diagnostic test equipment and packet sniffers. The hardware and software components that support maintenance and are a part of the system (including the software implementing utilities such as ping, ls, ipconfig, or the hardware and software implementing the monitoring port of an Ethernet switch) are not addressed by maintenance tools.",MA-3 (b) [at least annually],,,"• Records or documentation showing that system maintenance tools were approved by authorized personnel. This may be done multiple ways including email confirmation, approval forms, or maintenance tickets noting the approval of the tool.
+• Procedures addressing system maintenance tools
+• Maintenance records
+• Evidence of reviewing previously approved maintenance tools and hardware and software inventory at least annually
+• Evidence of the removal of outdated, unsupported, irrelevant, or no-longer used/needed tools (tickets, change management records, etc.)",Yes,0.89%,January-26,,"a. Pass with concerns: Please provide a screenshot from the AWS Customer Responsibility Matrix or the CRM itself to support that this is an inherited control. 
+
+b. Pass with concerns: Please provide a screenshot from the AWS Customer Responsibility Matrix or the CRM itself to support that this is an inherited control. 
+
+Also, take note that the maintenance of the software and applications is also in scope and the tools that provide management and maintenance should be discussed.","The previous snapshot Matrix reported controls that listed the month in which it would expire. 
+To maintain the current score for a control with expiring/expired evidence, refreshed evidence must be
+uploaded to the appropriate control folder for reevaluation and rescoring. 
+If updated evidence is not provided and the control is reassessed in the review
+cycle, it may fail to meet the requirements—resulting in a failed status and a
+reduced score.
+To identify which controls require updated evidence, please refer to Tab
+7_Expired_Evidence Dashboard: Columns C & D, ""Within 3 Months"" and ""Expired This Month"", respectively.
+
+
+Fail - evidence was not refreshed.","Passed in previous review.
+NOTE: 
+Evidence is valid for one year. Due to insufficient notification from the GovRAMP PMO, several expired controls will retain a passing grade for this cycle.  To maintain the current score, all expired/expiring evidence needs to be updated before the next review. See Tab 7_Expired Evidence Dashboard for an overview of expired controls. The highlighted controls will need to be refreshed in the next review cycle to avoid a reduced score.",Passed in previous review.,Passed in previous review.,Passed in previous review.,Passed in previous review.," a. Pass with Concerns: Please provide a screenshot from the AWS Customer Responsibility Matrix or the CRM itself to support that this is an inherited control. 
+b. Pass with Concerns: Please provide a screenshot from the AWS Customer Responsibility Matrix or the CRM itself to support that this is an inherited control. ", 
+29,RA-05,61.82,2.13%,RISK ASSESSMENT,RA-5,Vulnerability Monitoring and Scanning,"a. Monitor and scan for vulnerabilities in the system and hosted applications [Assignment: organization-defined frequency and/or randomly in accordance with organization-defined process] and when new vulnerabilities potentially affecting the system are identified and reported;
+b. Employ vulnerability monitoring tools and techniques that facilitate interoperability among tools and automate parts of the vulnerability management process by using standards for:
+ 1. Enumerating platforms, software flaws, and improper configurations;
+ 2. Formatting checklists and test procedures; and
+ 3. Measuring vulnerability impact; 
+c. Analyze vulnerability scan reports and results from vulnerability monitoring;
+d. Remediate legitimate vulnerabilities [Assignment: organization-defined response times] in accordance with an organizational assessment of risk;
+e. Share information obtained from the vulnerability monitoring process and control assessments with [Assignment: organization-defined personnel or roles] to help eliminate similar vulnerabilities in other systems; and
+f. Employ vulnerability monitoring tools that include the capability to readily update the vulnerabilities to be scanned.","Security categorization of information and systems guides the frequency and comprehensiveness of vulnerability monitoring (including scans). Organizations determine the required vulnerability monitoring for system components, ensuring that the potential sources of vulnerabilities—such as infrastructure components (e.g., switches, routers, guards, sensors), networked printers, scanners, and copiers—are not overlooked. The capability to readily update vulnerability monitoring tools as new vulnerabilities are discovered and announced and as new scanning methods are developed helps to ensure that new vulnerabilities are not missed by employed vulnerability monitoring tools. The vulnerability monitoring tool update process helps to ensure that potential vulnerabilities in the system are identified and addressed as quickly as possible. Vulnerability monitoring and analyses for custom software may require additional approaches, such as static analysis, dynamic analysis, binary analysis, or a hybrid of the three approaches. Organizations can use these analysis approaches in source code reviews and in a variety of tools, including web-based application scanners, static analysis tools, and binary analyzers. 
+ Vulnerability monitoring includes scanning for patch levels; scanning for functions, ports, protocols, and services that should not be accessible to users or devices; and scanning for flow control mechanisms that are improperly configured or operating incorrectly. Vulnerability monitoring may also include continuous vulnerability monitoring tools that use instrumentation to continuously analyze components. Instrumentation-based tools may improve accuracy and may be run throughout an organization without scanning. Vulnerability monitoring tools that facilitate interoperability include tools that are Security Content Automated Protocol (SCAP)-validated. Thus, organizations consider using scanning tools that express vulnerabilities in the Common Vulnerabilities and Exposures (CVE) naming convention and that employ the Open Vulnerability Assessment Language (OVAL) to determine the presence of vulnerabilities. Sources for vulnerability information include the Common Weakness Enumeration (CWE) listing and the National Vulnerability Database (NVD). Control assessments, such as red team exercises, provide additional sources of potential vulnerabilities for which to scan. Organizations also consider using scanning tools that express vulnerability impact by the Common Vulnerability Scoring System (CVSS).
+ Vulnerability monitoring includes a channel and process for receiving reports of security vulnerabilities from the public at-large. Vulnerability disclosure programs can be as simple as publishing a monitored email address or web form that can receive reports, including notification authorizing good-faith research and disclosure of security vulnerabilities. Organizations generally expect that such research is happening with or without their authorization and can use public vulnerability disclosure channels to increase the likelihood that discovered vulnerabilities are reported directly to the organization for remediation.
+ Organizations may also employ the use of financial incentives (also known as bug bounties) to further encourage external security researchers to report discovered vulnerabilities. Bug bounty programs can be tailored to the organization’s needs. Bounties can be operated indefinitely or over a defined period of time and can be offered to the general public or to a curated group. Organizations may run public and private bounties simultaneously and could choose to offer partially credentialed access to certain participants in order to evaluate security vulnerabilities from privileged vantage points.","RA-5 (a) [monthly operating system/infrastructure; monthly web applications (including APIs) and databases]
+RA-5 (d) [high-risk vulnerabilities mitigated within thirty (30) days from date of discovery; moderate-risk vulnerabilities mitigated within ninety (90) days from date of discovery; low risk vulnerabilities mitigated within one hundred and eighty (180) days from date of discovery]","RA-5 Guidance: See the GovRAMP Documents page> Vulnerability Scanning Requirements 
+https://GovRAMP.org/templates-resources/
+RA-5 (a) Requirement: an accredited independent assessor scans operating systems/infrastructure, web applications, and databases once annually.
+RA-5 (d) Requirement: If a vulnerability is listed among the CISA Known Exploited Vulnerability (KEV) Catalog (https://www.cisa.gov/known-exploited-vulnerabilities-catalog) the KEV remediation date supersedes the GovRAMP parameter requirement.
+RA-5 (e) Requirement: to include all Sponsor/SAC authorizations to include GovRAMP
+
+RA-5 Guidance: Informational findings from a scanner are detailed as a returned result that holds no vulnerability risk or severity and for GovRAMP does not require an entry onto the POA&M or entry onto the RET during any assessment phase.
+Warning findings, on the other hand, are given a risk rating (low, moderate, high or critical) by the scanning solution and should be treated like any other finding with a risk or severity rating for tracking purposes onto either the POA&M or RET depending on when the findings originated (during assessments or during monthly continuous monitoring). If a warning is received during scanning, but further validation turns up no actual issue then this item should be categorized as a false positive. If this situation presents itself during an assessment phase (initial assessment, annual assessment or any SCR), follow guidance on how to report false positives in the Security Assessment Report (SAR). If this situation happens during monthly continuous monitoring, a deviation request will need to be submitted per the GovRAMP Vulnerability Deviation Request Form.
+Warnings are commonly associated with scanning solutions that also perform compliance scans, and if the scanner reports a “warning” as part of the compliance scanning of a SP, follow guidance surrounding the tracking of compliance findings during either the assessment phases (initial assessment, annual assessment or any SCR) or monthly continuous monitoring as it applies. Guidance on compliance scan findings can be found by searching on “Tracking of Compliance Scans” in FAQs.
+",,"• Procedures addressing vulnerability scanning
+• Plan of Actions & Milestones report
+• Screenshots or reports from vulnerability scanning (web application and OS) tool ex: Nessus, Tenable.sc, or Qualys for three prior (3) months
+• Evidence that the scanning tool(s) used facilitates interpolarity among other tools (SCAP validation, uses CVE, OVAL, CWE, CVSS - see NIST discussion (Column I) for more detail)
+• Ticket or change request to remediate a vulnerability recently discovered by scanning tool
+• Email thread or confirmation of a remediation process taking place after receiving notification of vulnerabilities
+• Evidence of analysis of vulnerability scan reports and vulnerability monitoring (reporting, dashboards, regular meetings to discuss vulnerabilities)
+• Documentation or screenshots of vulnerability scanning tool configuration settings showing how the organization is set up to receive and implement updates for new vulnerabilities
+• Example tickets of vulnerability scan findings representing the CSP tracks vulnerability scan findings in the ticketing system so that personnel with appropriate access can review and track
+• Evidence of meeting invitation to determine that CSP discusses vulnerabilities with relevant stakeholders
+• Evidence that vulnerabilities are remediated in the required timelines (See Column J)
+",Yes,2.13%,January-26,,"(a): Pass 
+
+(b): Pass
+
+(c): Pass
+
+(d): Pass 
+
+(e): Pass
+
+(f): Pass","(a): Pass with Concerns: Ensure evidence aligns with consistent (monthly) monitoring and scanning of vulnerabilities with Inspector.
+
+(b): Pass
+
+(c): Fail: Provide evidence of the analysis of scan reports and vulnerability monitoring.
+
+(d): Pass with Concerns: Ensure remediation actions align to the defined timelines.
+
+(e): Fail:  Provide evidence that vulnerability information is shared with other organization personnel to assist in protecting other systems.
+
+(f): Fail: Provide evidence that the tool used can be readily update the vulnerabilities to be scanned.","No new evidence submitted as of 7/24/2025.
+(a): Fail: Provide evidence of consistent (monthly) monitoring and scanning of vulnerabilities with Inspector.
+
+(b): Pass
+
+(c): Fail: Provide evidence of the analysis of scan reports and vulnerability monitoring.
+
+(d): Fail: Provide evidence that vulnerabilities are remediated within the required timelines.
+
+(e): Fail:  Provide evidence that vulnerability information is shared with other organization personnel to assist in protecting other systems.
+
+(f): Fail: Provide evidence that the tool used can be readily update the vulnerabilities to be scanned.","No new evidence submitted as of 4/24/2025.
+(a): Fail: Provide evidence of consistent (monthly) monitoring and scanning of vulnerabilities with Inspector.
+
+(b): Pass
+
+(c): Fail: Provide evidence of the analysis of scan reports and vulnerability monitoring.
+
+(d): Fail: Provide evidence that vulnerabilities are remediated within the required timelines.
+
+(e): Fail:  Provide evidence that vulnerability information is shared with other organization personnel to assist in protecting other systems.
+
+(f): Fail: Provide evidence that the tool used can be readily update the vulnerabilities to be scanned.","No new evidence submitted as of 1/14/2025.
+(a): Fail: Provide evidence of consistent (monthly) monitoring and scanning of vulnerabilities with Inspector.
+
+(b): Pass
+
+(c): Fail: Provide evidence of the analysis of scan reports and vulnerability monitoring.
+
+(d): Fail: Provide evidence that vulnerabilities are remediated within the required timelines.
+
+(e): Fail:  Provide evidence that vulnerability information is shared with other organization personnel to assist in protecting other systems.
+
+(f): Fail: Provide evidence that the tool used can be readily update the vulnerabilities to be scanned.","(a): Fail: Provide evidence of consistent (monthly) monitoring and scanning of vulnerabilities with Inspector.
+
+(b): Pass
+
+(c): Fail: Provide evidence of the analysis of scan reports and vulnerability monitoring.
+
+(d): Fail: Provide evidence that vulnerabilities are remediated within the required timelines.
+
+(e): Fail:  Provide evidence that vulnerability information is shared with other organization personnel to assist in protecting other systems.
+
+(f): Fail: Provide evidence that the tool used can be readily update the vulnerabilities to be scanned.",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+30,RA-05 (05),61.82,2.13%,RISK ASSESSMENT,RA-5 (5),Vulnerability Monitoring and Scanning | Privileged Access,Implement privileged access authorization to [Assignment: organization-defined system components] for [Assignment: organization-defined vulnerability scanning activities].,"In certain situations, the nature of the vulnerability scanning may be more intrusive, or the system component that is the subject of the scanning may contain classified or controlled unclassified information, such as personally identifiable information. Privileged access authorization to selected system components facilitates more thorough vulnerability scanning and protects the sensitive nature of such scanning.","RA-5 (5)-1 [all components that support authentication] 
+RA-5 (5)-2 [all scans]",,,"• Evidence of scans that use privivelged access authorization when scanning.
+• Evidence of scan tool settings configured to run authenticated scans.
+• Authentication records used by the scanning tool.
+• A list of scanning tool users who are authorized to make configuration changes.",Yes,2.13%,January-26,,"Pass with concerns - Evidence demonstrates that system components are currently managed and capable of receiving privileged operations through AWS Systems Manager, supporting vulnerability monitoring activities. However, the evidence does not demonstrate organization-defined privileged access authorization specifically for vulnerability scanning activities. Additional evidence showing scanner-specific authorization mechanisms (e.g. IAM roles, scanner configuration or policy mapping) will strengthen this.","Fail: Provide evidence that credentialed scans for all system components within the authorization boundary including operating systems (OS), container images, web applications (including APIs), and databases are used wherever possible.
+
+NOTE: Please submit fresh evidence within the designated control folder not located within the Refresh Evidence folder.",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+31,SC-07,72.9,2.52%,SYSTEM AND COMMUNICATIONS PROTECTION,SC-7,Boundary Protection,"a. Monitor and control communications at the external managed interfaces to the system and at key internal managed interfaces within the system;
+b. Implement subnetworks for publicly accessible system components that are [Selection: physically; logically] separated from internal organizational networks; and
+c. Connect to external networks or systems only through managed interfaces consisting of boundary protection devices arranged in accordance with an organizational security and privacy architecture.","Managed interfaces include gateways, routers, firewalls, guards, network-based malicious code analysis, virtualization systems, or encrypted tunnels implemented within a security architecture. Subnetworks that are physically or logically separated from internal networks are referred to as demilitarized zones or DMZs. Restricting or prohibiting interfaces within organizational systems includes restricting external web traffic to designated web servers within managed interfaces, prohibiting external traffic that appears to be spoofing internal addresses, and prohibiting internal traffic that appears to be spoofing external addresses. SP 800-189 provides additional information on source address validation techniques to prevent ingress and egress of traffic with spoofed addresses. Commercial telecommunications services are provided by network components and consolidated management systems shared by customers. These services may also include third party-provided access lines and other service elements. Such services may represent sources of increased risk despite contract security provisions. Boundary protection may be implemented as a common control for all or part of an organizational network such that the boundary to be protected is greater than a system-specific boundary (i.e., an authorization boundary).",,"SC-7 (b) Guidance:   SC-7 (b) should be met by subnet isolation.  A subnetwork (subnet) is a physically or logically segmented section of a larger network defined at TCP/IP Layer 3, to both minimize traffic and, important for a GovRAMP Authorization, add a crucial layer of network isolation. Subnets are distinct from VLANs (Layer 2), security groups, and VPCs and are specifically required to satisfy SC-7 part b and other controls.  ",,"• Procedures addressing boundary protection
+• List of internal key boundaries of the system
+• Network architecture or data flow diagram(s) which depict a visual representation of network architecture showing ingress/egress points, network segmentation, and the locations of key internal managed interfaces.
+• Example of inbound/outbound communications traffic filtered via the source and destination to only authorized/allowed addresses and included a rule to deny all/permit by exception. 
+• Example of security groups to reflect  traffic was filtered via the source and destination to only authorized/allowed addresses and included a rule to deny all/permit by exception.
+• Boundary protection device (firewall, IDS, IPS, WAF, etc.) configuration settings",Yes,2.52%,January-26,,"(a): Pass
+
+(b): Pass
+
+(c): Pass","(a): Pass
+
+(b): Fail: Cannot decipher from the Security Groups provided how the network is segmented. Visually, provide a network diagram illustrating the implementation of AWS VPC/Subnet.
+
+(c): Pass","No new evidence submitted as of 7/24/2025.
+(a): Fail: Provide evidence that communications at external and internal interfaces are monitored and controlled. This includes network diagrams along with network monitoring configuration settings.
+
+(b): Fail: Provide a network diagram illustrating the implementation of AWS VPC/Subnet.
+
+(c): Fail: Provide evidence that outgoing connections are only initiated through boundary protection devices.","No new evidence submitted as of 4/24/2025.
+(a): Fail: Provide evidence that communications at external and internal interfaces are monitored and controlled. This includes network diagrams along with network monitoring configuration settings.
+
+(b): Fail: Provide a network diagram illustrating the implementation of AWS VPC/Subnet.
+
+(c): Fail: Provide evidence that outgoing connections are only initiated through boundary protection devices.","No new evidence submitted as of 1/14/2025.
+(a): Fail: Provide evidence that communications at external and internal interfaces are monitored and controlled. This includes network diagrams along with network monitoring configuration settings.
+
+(b): Fail: Provide a network diagram illustrating the implementation of AWS VPC/Subnet.
+
+(c): Fail: Provide evidence that outgoing connections are only initiated through boundary protection devices.","(a): Fail: Provide evidence that communications at external and internal interfaces are monitored and controlled. This includes network diagrams along with network monitoring configuration settings.
+
+(b): Fail: Provide a network diagram illustrating the implementation of AWS VPC/Subnet.
+
+(c): Fail: Provide evidence that outgoing connections are only initiated through boundary protection devices.",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+32,SC-07 (03),72.9,2.52%,SYSTEM AND COMMUNICATIONS PROTECTION,SC-7 (3),Boundary Protection | Access Points,Limit the number of external network connections to the system.,"Limiting the number of external network connections facilitates monitoring of inbound and outbound communications traffic. The Trusted Internet Connection DHS TIC initiative is an example of a federal guideline that requires limits on the number of external network connections. Limiting the number of external network connections to the system is important during transition periods from older to newer technologies (e.g., transitioning from IPv4 to IPv6 network protocols). Such transitions may require implementing the older and newer technologies simultaneously during the transition period and thus increase the number of access points to the system.",,,,"• Network diagram(s) which depict a visual representation showing external ingress/egress points
+• Example of inbound communications traffic filtered via the source and destination to only authorized/allowed addresses and included a rule to deny all/permit by exception
+• Example of security groups to reflect  traffic was filtered via the source and destination to only authorized/allowed addresses and included a rule to deny all/permit by exception
+• Screenshots of rules and configuration settings for inbound connections from boundary protection devices",Yes,2.52%,January-26,,Pass - evidence refreshed,Pass,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+33,SC-28,15.33,0.53%,SYSTEM AND COMMUNICATIONS PROTECTION,SC-28,Protection of Information at Rest,Protect the [Selection (one or more): confidentiality; integrity] of the following information at rest: [Assignment: organization-defined information at rest].,"Information at rest refers to the state of information when it is not in process or in transit and is located on system components. Such components include internal or external hard disk drives, storage area network devices, or databases. However, the focus of protecting information at rest is not on the type of storage device or frequency of access but rather on the state of the information. Information at rest addresses the confidentiality and integrity of information and covers user information and system information. System-related information that requires protection includes configurations or rule sets for firewalls, intrusion detection and prevention systems, filtering routers, and authentication information. Organizations may employ different mechanisms to achieve confidentiality and integrity protections, including the use of cryptographic mechanisms and file share scanning. Integrity protection can be achieved, for example, by implementing write-once-read-many (WORM) technologies. When adequate protection of information at rest cannot otherwise be achieved, organizations may employ other controls, including frequent scanning to identify malicious code at rest and secure offline storage in lieu of online storage.",SC-28 [confidentiality AND integrity],"SC-28 Guidance: The organization supports the capability to use cryptographic mechanisms to protect information at rest. 
+
+SC-28 Guidance: When leveraging encryption from underlying IaaS/PaaS: While some IaaS/PaaS services provide encryption by default, many require encryption to be configured, and enabled by the customer. The SP has the responsibility to verify encryption is properly configured.  
+
+SC-28 Guidance: Note that this enhancement requires the use of cryptography in accordance with SC-13.",,"• Procedures addressing the protection of information at rest
+• Screenshots showing database encryption, backup encryption, hard drive encryption",Yes,0.53%,January-26,,Pass,Pass,"Passed in previous review.
+NOTE: 
+Evidence is valid for one year. Due to insufficient notification from the GovRAMP PMO, several expired controls will retain a passing grade for this cycle.  To maintain the current score, all expired/expiring evidence needs to be updated before the next review. See Tab 7_Expired Evidence Dashboard for an overview of expired controls. The highlighted controls will need to be refreshed in the next review cycle to avoid a reduced score.",Passed in previous review.,Passed in previous review.,Passed in previous review.,Passed in previous review., , 
+34,SI-02,45.59,1.57%,SYSTEM AND INFORMATION INTEGRITY,SI-2,Flaw Remediation,"a. Identify, report, and correct system flaws;
+b. Test software and firmware updates related to flaw remediation for effectiveness and potential side effects before installation;
+c. Install security-relevant software and firmware updates within [Assignment: organization-defined time period] of the release of the updates; and
+d. Incorporate flaw remediation into the organizational configuration management process.","The need to remediate system flaws applies to all types of software and firmware. Organizations identify systems affected by software flaws, including potential vulnerabilities resulting from those flaws, and report this information to designated organizational personnel with information security and privacy responsibilities. Security-relevant updates include patches, service packs, and malicious code signatures. Organizations also address flaws discovered during assessments, continuous monitoring, incident response activities, and system error handling. By incorporating flaw remediation into configuration management processes, required remediation actions can be tracked and verified.
+ Organization-defined time periods for updating security-relevant software and firmware may vary based on a variety of risk factors, including the security category of the system, the criticality of the update (i.e., severity of the vulnerability related to the discovered flaw), the organizational risk tolerance, the mission supported by the system, or the threat environment. Some types of flaw remediation may require more testing than other types. Organizations determine the type of testing needed for the specific type of flaw remediation activity under consideration and the types of changes that are to be configuration-managed. In some situations, organizations may determine that the testing of software or firmware updates is not necessary or practical, such as when implementing simple malicious code signature updates. In testing decisions, organizations consider whether security-relevant software or firmware updates are obtained from authorized sources with appropriate digital signatures.",SI-2 (c) [within thirty (30) days of release of updates],,,"• Procedures addressing flaw remediation
+• Procedures addressing configuration management
+• Configuration Management Plan
+• Both dynamic and static web application scan results
+• Infrastructure scan results
+• Documentation on how patches are tested prior to release to production
+• Latest POA&M report, including “closed” tab
+• List of flaws and vulnerabilities potentially affecting the system
+• List of recent security flaw remediation actions performed on the system (e.g., list of installed patches, service packs, hot fixes, and other software updates to correct system flaws)
+• Test results from the installation of software and firmware updates to correct system flaws
+• Installation/change control records for security-relevant software and firmware updates
+• Evidence of vendor patch management tool",Yes,1.57%,January-26,,"(a): Pass 
+
+(b): Pass with concerns - Jira change/Access approval boards show change workflow, approvals and tasks tied to remediation. This implies that testing and review occurred but there is no explicit evidence of testing artifacts such as pre-prod/staging validation, test results or change records explicitly stating "" testing performed""
+
+(c): Pass
+
+(d):Pass with concerns - The Jira Change Management boards show integration with change control. The slack and Jira workflow also demonstrate operational linkage. However, there is no explicit  policy or CMP excerpts indicating that vulnerability remediation is governed by CM or Inspector/Jira are authoritative inputs to CM","(a): Pass 
+
+(b): Fail: Provide evidence that shows software and firmware updates are tested for effectiveness and issues before they are installed.
+
+(c): Fail:  Provide evidence that security-relevant software and firmware updates are installed within 30 days of being released by the vendor or the product team (your organization).
+
+(d): Fail:  Provide evidence or documentation that flaw remediation is incorporated into the configuration management process.",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+35,SI-02 (02),45.59,1.57%,SYSTEM AND INFORMATION INTEGRITY,SI-2 (2),Flaw Remediation | Automated Flaw Remediation Status,Determine if system components have applicable security-relevant software and firmware updates installed using [Assignment: organization-defined automated mechanisms] [Assignment: organization-defined frequency].,Automated mechanisms can track and determine the status of known flaws for system components.,"SI-2 (2)-2 [at least monthly] 
+",,,"• Evidence of automated tools used in patch management.
+• Evidence of an automated update tracking system for vendor patching.
+• History (log) of vendor patch installation for last three (3) months.",Yes,1.57%,October-25,,"Pass 
+
+ New evidence shows that automated mechanisms are implemented and remediation status is visible in AWS Inspector; However, the evidence does not explicitly demonstrate enforcement of the organization defined frequency. This will remain a pass since the 10/25 evidence has not expired",Pass,No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+36,SI-03,147.59,5.09%,SYSTEM AND INFORMATION INTEGRITY,SI-3,Malicious Code Protection,"a. Implement [Selection (one or more): signature based; non-signature based] malicious code protection mechanisms at system entry and exit points to detect and eradicate malicious code;
+b. Automatically update malicious code protection mechanisms as new releases are available in accordance with organizational configuration management policy and procedures;
+c. Configure malicious code protection mechanisms to:
+ 1. Perform periodic scans of the system [Assignment: organization-defined frequency] and real-time scans of files from external sources at [Selection (one or more): endpoint; network entry and exit points] as the files are downloaded, opened, or executed in accordance with organizational policy; and
+ 2. [Selection (one or more): block malicious code; quarantine malicious code; take [Assignment: organization-defined action]]; and send alert to [Assignment: organization-defined personnel or roles] in response to malicious code detection; and
+d. Address the receipt of false positives during malicious code detection and eradication and the resulting potential impact on the availability of the system.","System entry and exit points include firewalls, remote access servers, workstations, electronic mail servers, web servers, proxy servers, notebook computers, and mobile devices. Malicious code includes viruses, worms, Trojan horses, and spyware. Malicious code can also be encoded in various formats contained within compressed or hidden files or hidden in files using techniques such as steganography. Malicious code can be inserted into systems in a variety of ways, including by electronic mail, the world-wide web, and portable storage devices. Malicious code insertions occur through the exploitation of system vulnerabilities. A variety of technologies and methods exist to limit or eliminate the effects of malicious code.
+ Malicious code protection mechanisms include both signature- and Non signature-based technologies. Non signature-based detection mechanisms include artificial intelligence techniques that use heuristics to detect, analyze, and describe the characteristics or behavior of malicious code and to provide controls against such code for which signatures do not yet exist or for which existing signatures may not be effective. Malicious code for which active signatures do not yet exist or may be ineffective includes polymorphic malicious code (i.e., code that changes signatures when it replicates). Nonsignature-based mechanisms also include reputation-based technologies. In addition to the above technologies, pervasive configuration management, comprehensive software integrity controls, and anti-exploitation software may be effective in preventing the execution of unauthorized code. Malicious code may be present in commercial off-the-shelf software as well as custom-built software and could include logic bombs, backdoors, and other types of attacks that could affect organizational mission and business functions.
+ In situations where malicious code cannot be detected by detection methods or technologies, organizations rely on other types of controls, including secure coding practices, configuration management and control, trusted procurement processes, and monitoring practices to ensure that software does not perform functions other than the functions intended. Organizations may determine that, in response to the detection of malicious code, different actions may be warranted. For example, organizations can define actions in response to malicious code detection during periodic scans, the detection of malicious downloads, or the detection of maliciousness when attempting to open or execute files.","SI-3 (a) [signature based and non-signature based]
+SI-3 (c) (1)-1 [at least weekly] 
+SI-3 (c) (1)-2 [to include endpoints and network entry and exit points]
+SI-3 (c) (2)-1 [to include blocking and quarantining malicious code]
+SI-3 (c) (2)-2 [administrator or defined security personnel near-realtime]",,,"• Procedures addressing malicious code protection
+• Screenshot of Anti-Malware console showing installation on all relative components
+• Screenshot of Anti-Malware console showing configuration update frequency
+• Screenshot of Anti-Malware console showing scan schedule
+• Screenshot of Anti-Malware console showing real-time (on-access) scan configuration
+• Screenshot of Anti-Malware console showing action to be taken in response to malicious code detection. Example: Block malicious code and quarantine malicious code
+• Screenshot of Anti-Malware console showing alert configuration. Or provide copies of alerts received within last three (3) months
+• Screenshot of Anti-Malware console showing signature based protection mechanisms
+• Screenshot of Anti-Malware console showing non-siganture based protection mechanisms
+• Evidence of any actions taken outside of the protection mechanism when malicious code is detected",Yes,5.09%,January-26,,"(a): Pass
+
+(b): Pass
+
+(c): Pass
+
+(d): Pass","(a): Pass with Concerns: Ensure to leverage both signature based and non-signature based malicious code protection mechanisms within AWS GuardDuty.
+
+(b): Fail: AWS GuardDuty is configured to automatically initiate a scan after a finding is detected, however, this requirement is to automatically update the tool itself as new releases are available.
+
+(c): Fail: Provide more evidence pertaining to scanning that aligns with the specific parameters outlined by GovRAMP. Although scanning is performed, the EC2 scan provided looks to be from two months ago; one of the specific requirements is to perform scanning at least weekly.
+
+(d): Fail: Provide evidence or documentation on the processes performed when false positives are received and determining the resulting potential impact to the system.","No new evidence submitted as of 7/24/2025.
+(a): Pass with Concerns: Ensure to leverage both signature based and non-signature based malicious code protection mechanisms within AWS GuardDuty.
+
+(b): Fail: AWS GuardDuty is configured to automatically initiate a scan after a finding is detected, however, this requirement is to automatically update the tool itself as new releases are available.
+
+(c): Fail: Provide more evidence pertaining to scanning that aligns with the specific parameters outlined by GovRAMP. Although scanning is performed, the EC2 scan provided looks to be from two months ago; one of the specific requirements is to perform scanning at least weekly.
+
+(d): Fail: Provide evidence or documentation on the processes performed when false positives are received and determining the resulting potential impact to the system.","No new evidence submitted as of 4/24/2025.
+(a): Pass with Concerns: Ensure to leverage both signature based and non-signature based malicious code protection mechanisms within AWS GuardDuty.
+
+(b): Fail: AWS GuardDuty is configured to automatically initiate a scan after a finding is detected, however, this requirement is to automatically update the tool itself as new releases are available.
+
+(c): Fail: Provide more evidence pertaining to scanning that aligns with the specific parameters outlined by GovRAMP. Although scanning is performed, the EC2 scan provided looks to be from two months ago; one of the specific requirements is to perform scanning at least weekly.
+
+(d): Fail: Provide evidence or documentation on the processes performed when false positives are received and determining the resulting potential impact to the system.","No new evidence submitted as of 1/14/2025.
+(a): Pass with Concerns: Ensure to leverage both signature based and non-signature based malicious code protection mechanisms within AWS GuardDuty.
+
+(b): Fail: AWS GuardDuty is configured to automatically initiate a scan after a finding is detected, however, this requirement is to automatically update the tool itself as new releases are available.
+
+(c): Fail: Provide more evidence pertaining to scanning that aligns with the specific parameters outlined by GovRAMP. Although scanning is performed, the EC2 scan provided looks to be from two months ago; one of the specific requirements is to perform scanning at least weekly.
+
+(d): Fail: Provide evidence or documentation on the processes performed when false positives are received and determining the resulting potential impact to the system.","(a): Pass with Concerns: Ensure to leverage both signature based and non-signature based malicious code protection mechanisms within AWS GuardDuty.
+
+(b): Fail: AWS GuardDuty is configured to automatically initiate a scan after a finding is detected, however, this requirement is to automatically update the tool itself as new releases are available.
+
+(c): Fail: Provide more evidence pertaining to scanning that aligns with the specific parameters outlined by GovRAMP. Although scanning is performed, the EC2 scan provided looks to be from two months ago; one of the specific requirements is to perform scanning at least weekly.
+
+(d): Fail: Provide evidence or documentation on the processes performed when false positives are received and determining the resulting potential impact to the system.",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+37,SI-04,111.73,3.86%,SYSTEM AND INFORMATION INTEGRITY,SI-4,System Monitoring,"a. Monitor the system to detect:
+ 1. Attacks and indicators of potential attacks in accordance with the following monitoring objectives: [Assignment: organization-defined monitoring objectives]; and
+ 2. Unauthorized local, network, and remote connections;
+b. Identify unauthorized use of the system through the following techniques and methods: [Assignment: organization-defined techniques and methods];
+c. Invoke internal monitoring capabilities or deploy monitoring devices:
+ 1. Strategically within the system to collect organization-determined essential information; and
+ 2. At ad hoc locations within the system to track specific types of transactions of interest to the organization;
+d. Analyze detected events and anomalies;
+e. Adjust the level of system monitoring activity when there is a change in risk to organizational operations and assets, individuals, other organizations, or the Nation;
+f. Obtain legal opinion regarding system monitoring activities; and
+g. Provide [Assignment: organization-defined system monitoring information] to [Assignment: organization-defined personnel or roles] [Selection (one or more): as needed; [Assignment: organization-defined frequency]].","System monitoring includes external and internal monitoring. External monitoring includes the observation of events occurring at external interfaces to the system. Internal monitoring includes the observation of events occurring within the system. Organizations monitor systems by observing audit activities in real time or by observing other system aspects such as access patterns, characteristics of access, and other actions. The monitoring objectives guide and inform the determination of the events. System monitoring capabilities are achieved through a variety of tools and techniques, including intrusion detection and prevention systems, malicious code protection software, scanning tools, audit record monitoring software, and network monitoring software.
+ Depending on the security architecture, the distribution and configuration of monitoring devices may impact throughput at key internal and external boundaries as well as at other locations across a network due to the introduction of network throughput latency. If throughput management is needed, such devices are strategically located and deployed as part of an established organization-wide security architecture. Strategic locations for monitoring devices include selected perimeter locations and near key servers and server farms that support critical applications. Monitoring devices are typically employed at the managed interfaces associated with controls SC-7 and AC-17. The information collected is a function of the organizational monitoring objectives and the capability of systems to support such objectives. Specific types of transactions of interest include Hypertext Transfer Protocol (HTTP) traffic that bypasses HTTP proxies. System monitoring is an integral part of organizational continuous monitoring and incident response programs, and output from system monitoring serves as input to those programs. System monitoring requirements, including the need for specific types of system monitoring, may be referenced in other controls (e.g., AC-2g, AC-2 (7), AC-2 (12) (a), AC-17 (1), AU-13, AU-13 (1), AU-13 (2), CM-3f, CM-6d, MA-3a, MA-4a, SC-5 (3) (b), SC-7a, SC-7 (24) (b), SC-18b, SC-43b). Adjustments to levels of system monitoring are based on law enforcement information, intelligence information, or other sources of information. The legality of system monitoring activities is based on applicable laws, executive orders, directives, regulations, policies, standards, and guidelines.",,SI-4 Guidance: See US-CERT Incident Response Reporting Guidelines. ,,"• Procedures addressing system monitoring tools and techniques
+• Configuration information (screenshots) for Web Application Firewall (WAF). Network Intrusion Prevention System (NIPS), and/or Host Intrusion Prevention System (HIPS)
+• Evidence of log review for unauthorized access to the system
+• Evidence of internal monitoring capability
+• Locations within the system where monitoring devices are deployed
+• Evidence of detected events or anomalies
+• Evidence of ability to adjust monitoring levels when there is a change to risk posture
+• Evidence of legal opinion regarding system monitoring activities
+• Evidence of alerts received from monitoring systems
+• Evidence of sharing monitoring information with other organizational personnel (outside of security)",No,0.00%,,,"(a): Passed in previous review
+
+(b): Passed in previous review
+
+(c): Passed in previous review
+
+(d): Pass
+
+(e): Pass with concerns - WAF rules show active blocking and tuning capability and additional evidence shows monitoring configuration exists but  there is no clear proof of risk-driven adjustment triggers and no before/after configuration change tied to increased threat levels.
+
+(f): Fail: Provide evidence or documentation of obtaining legal opinion when using, or going to use new system monitoring activities
+
+(g): Pass
+
+","(a): Pass
+
+(b): Pass
+
+(c): Pass
+
+(d): Fail: Provide evidence of the analysis of detected events and anomalies.
+
+(e): Fail: Provide evidence or documentation to show the ability to adjust/heighten the level of system monitoring activity when there is a change in risk.
+
+(f): Fail: Provide evidence or documentation of obtaining legal opinion when using, or going to use new system monitoring activities
+
+(g): Fail: Provide evidence of sharing system monitoring information to other organizational personnel as needed.
+
+",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+38,SI-04 (04),50.31,1.74%,SYSTEM AND INFORMATION INTEGRITY,SI-4 (4),System Monitoring | Inbound and Outbound Communications Traffic,"a. Determine criteria for unusual or unauthorized activities or conditions for inbound and outbound communications traffic;
+b. Monitor inbound and outbound communications traffic [Assignment: organization-defined frequency] for [Assignment: organization-defined unusual or unauthorized activities or conditions].","Unusual or unauthorized activities or conditions related to system inbound and outbound communications traffic includes internal traffic that indicates the presence of malicious code or unauthorized use of legitimate code or credentials within organizational systems or propagating among system components, signaling to external systems, and the unauthorized exporting of information. Evidence of malicious code or unauthorized use of legitimate code or credentials is used to identify potentially compromised systems or system components.",SI-4 (4) (b)-1 [continuously],,,"• Evidence of definition of unusual or unauthorized activities or conditions for inbound and outbound communications traffic. This may include WAF, HIPS, and/or NIPs blocking rules
+• Evidence of frequency of log reviews or evidence of real-time alerting upon blocking events
+• Example of logs forwarded to the SIEM and configured to alert system administrators when unusual or unauthorized activities are detected
+• Evidence of administrators investigating/analyzing alerts regarding unusual or unauthorized activity",Yes,1.74%,January-26,,"(a): Pass
+
+(b): Pass","(a): Pass
+
+(b): Pass",No new evidence submitted as of 7/24/2025.,No new evidence submitted as of 4/24/2025.,No new evidence submitted as of 1/14/2025.,No evidence submitted as of 10/14/2024.,No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+39,SI-07,104.29,3.60%,SYSTEM AND INFORMATION INTEGRITY,SI-7,"Software, Firmware, and Information Integrity","a. Employ integrity verification tools to detect unauthorized changes to the following software, firmware, and information: [Assignment: organization-defined software, firmware, and information]; and
+b. Take the following actions when unauthorized changes to the software, firmware, and information are detected: [Assignment: organization-defined actions].","Unauthorized changes to software, firmware, and information can occur due to errors or malicious activity. Software includes operating systems (with key internal components, such as kernels or drivers), middleware, and applications. Firmware interfaces include Unified Extensible Firmware Interface (UEFI) and Basic Input/Output System (BIOS). Information includes personally identifiable information and metadata that contains security and privacy attributes associated with information. Integrity-checking mechanisms—including parity checks, cyclical redundancy checks, cryptographic hashes, and associated tools—can automatically monitor the integrity of systems and hosted applications.",,,,"• Procedures addressing software, firmware, and information integrity
+• Integrity verification tools and associated documentation
+• Audit records generated or triggered by integrity verification tools
+• Screenshots of integrity-checking configuration/mechanisms.  (Examples:  TripWire, Trellix Solidcore)
+• Email thread, helpdesk ticket, or alert triggered from unauthorized change occurring to software, firmware, or data that details actions taken",Yes,3.60%,January-26,,"(a): Pass
+
+(b): Pass","(a): Pass
+
+(b): Passed in previous review","No new evidence submitted as of 7/24/2025.
+(a): Fail: The tools provided relate to vulnerability management, audit logging, or malware scanning; the requirement for this control and sub-part is to employ a tool specifically configured to perform software and firmware integrity protections.
+
+(b): Passed in previous review","No new evidence submitted as of 4/24/2025.
+(a): Fail: The tools provided relate to vulnerability management, audit logging, or malware scanning; the requirement for this control and sub-part is to employ a tool specifically configured to perform software and firmware integrity protections.
+
+(b): Passed in previous review","No new evidence submitted as of 1/14/2025.
+(a): Fail: The tools provided relate to vulnerability management, audit logging, or malware scanning; the requirement for this control and sub-part is to employ a tool specifically configured to perform software and firmware integrity protections.
+
+(b): Passed in previous review","(a): Fail: The tools provided relate to vulnerability management, audit logging, or malware scanning; the requirement for this control and sub-part is to employ a tool specifically configured to perform software and firmware integrity protections.
+
+(b): Pass",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+40,SI-07 (07),104.29,3.60%,SYSTEM AND INFORMATION INTEGRITY,SI-7 (7),"Software, Firmware, and Information Integrity | Integration of Detection and Response",Incorporate the detection of the following unauthorized changes into the organizational incident response capability: [Assignment: organization-defined security-relevant changes to the system].,"Integrating detection and response helps to ensure that detected events are tracked, monitored, corrected, and available for historical purposes. Maintaining historical records is important for being able to identify and discern adversary actions over an extended time period and for possible legal actions. Security-relevant changes include unauthorized changes to established configuration settings or the unauthorized elevation of system privileges.",,,,"• Evidence of Incident Response Plan (IRP) activation following detection of unauthorized change
+• Incident Response Plan (IRP)
+• Section of IRP that addresses and defines unauthorized changes and how they are monitored and addressed",Yes,3.60%,October-25,,"Pass with Concerns still present: The new evidence documents mechanisms to detect unauthorized changes and references initiation of incident response activities. However, the Incident Response Plan does not explicitly document response procedures for unauthorized changes to system, firmware or information. Provide IR Plan with steps in response to unauthorized changes to the system. ",Pass with Concerns: Provide IR Plan with steps in response to unauthorized changes to the system.,"Pass with Concerns still persist: Ensure to detail the Incident Response capabilities relative to the detection of unauthorized changes to the system within the Incident Response Plan. The Plan details unauthorized access/users, however, it does not mention steps in response to unauthorized changes to the system.","Pass with Concerns still persist: Ensure to detail the Incident Response capabilities relative to the detection of unauthorized changes to the system within the Incident Response Plan. The Plan details unauthorized access/users, however, it does not mention steps in response to unauthorized changes to the system.","Pass with Concerns still persist: Ensure to detail the Incident Response capabilities relative to the detection of unauthorized changes to the system within the Incident Response Plan. The Plan details unauthorized access/users, however, it does not mention steps in response to unauthorized changes to the system.","Pass with Concerns: Ensure to detail the Incident Response capabilities relative to the detection of unauthorized changes to the system within the Incident Response Plan. The Plan details unauthorized access/users, however, it does not mention steps in response to unauthorized changes to the system.",No evidence submitted as of 7/23/2024.,No evidence submitted as of 4/23/2024., 
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,

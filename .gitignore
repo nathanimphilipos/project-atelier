@@ -1,0 +1,22 @@
+# Node
+node_modules
+.next
+dist
+out
+
+# Python
+.venv
+__pycache__
+*.pyc
+
+# Local data
+data/atelier/uploads
+data/atelier/chroma
+data/atelier/atelier.db
+
+# OS
+.DS_Store
+
+# Env
+.env
+.env.local
