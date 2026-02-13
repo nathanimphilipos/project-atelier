@@ -377,29 +377,83 @@ export default function ControlWorkspacePage() {
             </Card>
           )}
 
-          {/* Generated Narrative Output */}
-          {latestNarrative && (
-            <Card>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">
-                    Generated Narrative (v{latestNarrative.version})
-                  </CardTitle>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="outline" onClick={handleCopy}>
-                      <Copy className="h-4 w-4 mr-1" />
-                      {copied ? "Copied!" : "Copy"}
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="prose prose-sm max-w-none whitespace-pre-wrap text-sm bg-muted/50 p-4 rounded max-h-96 overflow-auto">
-                  {latestNarrative.narrative_text}
-                </div>
-              </CardContent>
-            </Card>
-          )}
+          {/* Copy-Paste Narrative */}
+          {latestNarrative && (() => {
+            const raw = latestNarrative.narrative_text || "";
+            const startTag = "===COPY-PASTE NARRATIVE START===";
+            const endTag = "===COPY-PASTE NARRATIVE END===";
+            const startIdx = raw.indexOf(startTag);
+            const endIdx = raw.indexOf(endTag);
+            const cleanNarrative =
+              startIdx !== -1 && endIdx !== -1
+                ? raw.slice(startIdx + startTag.length, endIdx).trim()
+                : null;
+            const assessmentDetails =
+              endIdx !== -1
+                ? raw.slice(endIdx + endTag.length).trim()
+                : raw;
+
+            return (
+              <>
+                {/* Clean narrative for copy-paste */}
+                {cleanNarrative && (
+                  <Card className="border-green-200 bg-green-50/30">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-base">
+                          Control Narrative (v{latestNarrative.version})
+                        </CardTitle>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => {
+                            navigator.clipboard.writeText(cleanNarrative);
+                            setCopied(true);
+                            setTimeout(() => setCopied(false), 2000);
+                          }}
+                        >
+                          <Copy className="h-4 w-4 mr-1" />
+                          {copied ? "Copied!" : "Copy Narrative"}
+                        </Button>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        Ready to paste into your SSP or StateRAMP Security Snapshot
+                      </p>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="bg-white border rounded-lg p-5 text-sm leading-relaxed whitespace-pre-wrap font-serif">
+                        {cleanNarrative}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Full assessment details (collapsible) */}
+                <Card>
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-base">
+                        PMO Assessment Details
+                      </CardTitle>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={handleCopy}
+                      >
+                        <Copy className="h-4 w-4 mr-1" />
+                        Copy All
+                      </Button>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="prose prose-sm max-w-none whitespace-pre-wrap text-sm bg-muted/50 p-4 rounded max-h-96 overflow-auto">
+                      {assessmentDetails}
+                    </div>
+                  </CardContent>
+                </Card>
+              </>
+            );
+          })()}
 
           {/* Create Cards from Gaps */}
           {latestNarrative && (

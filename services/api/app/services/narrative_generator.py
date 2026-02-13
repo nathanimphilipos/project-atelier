@@ -5,7 +5,7 @@ from typing import Optional
 
 from sqlalchemy.orm import Session
 
-from app.models import Control, Evidence, Narrative, AuditorFeedback, Assessment
+from app.models import Control, Evidence, Narrative, AuditorFeedback, Assessment, GovRAMPFeedback
 from app.genai.factory import get_genai_provider
 from app.rag.chroma_store import query_control_chunks
 from app.services.prompts import (
@@ -42,6 +42,7 @@ async def generate_narrative(
 
     evidence_summaries = _build_evidence_summaries(evidence_list)
     auditor_feedback_text = _build_feedback_text(feedback)
+    pmo_feedback_text = _build_pmo_feedback(db, control.control_id)
 
     prompt = NARRATIVE_GENERATION_PROMPT.format(
         control_id=control.control_id,
@@ -51,6 +52,7 @@ async def generate_narrative(
         evidence_summaries=evidence_summaries or "No evidence provided.",
         current_narrative=narrative_text or "No current narrative provided.",
         auditor_feedback=auditor_feedback_text or "No auditor feedback provided.",
+        pmo_feedback=pmo_feedback_text or "No PMO feedback available for this control.",
     )
 
     provider = get_genai_provider()
@@ -121,6 +123,34 @@ def _build_feedback_text(feedback: Optional[AuditorFeedback]) -> str:
     if feedback.findings_json:
         parts.append(f"Structured findings:\n{json.dumps(feedback.findings_json, indent=2)}")
     return "\n\n".join(parts)
+
+
+def _build_pmo_feedback(db: Session, control_id: str) -> str:
+    """Pull PMO feedback rows for this control (base + enhancements)."""
+    # Match base control and any enhancements (e.g. AC-02 matches AC-2, AC-2 (1), etc.)
+    import re as _re
+    match = _re.match(r"^([A-Z]{2})-0*(\d+)$", control_id)
+    if not match:
+        return ""
+    prefix, num = match.group(1), match.group(2)
+    # Query feedback where control_id starts with the family-number pattern
+    like_pattern = f"{prefix}-{num}%"
+    rows = db.query(GovRAMPFeedback).filter(GovRAMPFeedback.control_id.like(like_pattern)).all()
+    if not rows:
+        return ""
+
+    parts = []
+    for fb in rows:
+        status_str = fb.latest_status or ("Pass" if fb.control_completed else "Fail")
+        line = f"- **{fb.control_id}** ({fb.control_name or 'N/A'}): Status={status_str}, Score={fb.score}"
+        if fb.latest_feedback:
+            line += f"\n  Feedback: {fb.latest_feedback[:500]}"
+        if fb.issues:
+            issues = fb.issues if isinstance(fb.issues, list) else [fb.issues]
+            line += f"\n  Issues: {'; '.join(str(i) for i in issues[:5])}"
+        parts.append(line)
+
+    return f"PMO reviewed {len(rows)} sub-controls for {control_id}:\n" + "\n".join(parts)
 
 
 def _extract_scoring_inputs(narrative_text: str) -> dict:

@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 180 33% 91%;
+    --background: 170 12% 96%;
     --foreground: 240 28% 14%;
     --card: 0 0% 100%;
     --card-foreground: 240 28% 14%;
     --primary: 213 100% 22%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 180 33% 91%;
+    --secondary: 170 14% 94%;
     --secondary-foreground: 213 100% 22%;
-    --accent: 105 100% 22%;
+    --accent: 110 70% 24%;
     --accent-foreground: 0 0% 100%;
-    --muted: 160 14% 95%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 170 10% 95%;
+    --muted-foreground: 215 16% 47%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 82%;
-    --input: 220 13% 82%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
     --ring: 213 100% 22%;
-    --radius: 0.5rem;
+    --radius: 0.625rem;
   }
 }
 
@@ -30,7 +30,20 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .skeleton {
+    @apply bg-muted rounded-md animate-skeleton;
+  }
+  .gradient-bar {
+    background: linear-gradient(90deg, #003070 0%, #1a7a00 50%, #003070 100%);
+    background-size: 200% 100%;
   }
 }

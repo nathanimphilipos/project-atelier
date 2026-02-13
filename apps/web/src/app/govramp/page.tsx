@@ -21,6 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TIER_LABELS, TIER_COLORS } from "@/lib/types";
+import { PageHeader } from "@/components/layout/page-header";
 
 const TIER_ORDER = ["ps", "ready", "core", "authorized"];
 
@@ -124,24 +125,22 @@ export default function GovRAMPJourneyPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-navy">GovRAMP Journey</h1>
-          <p className="text-sm text-muted-foreground">
-            Track your progress across GovRAMP tiers: PS (40), Ready (80), Core
-            (60), Authorized (319)
-          </p>
-        </div>
-        <Button
-          size="sm"
-          variant="outline"
-          onClick={handleImportCsv}
-          disabled={importCsv.isPending}
-        >
-          <Upload className="h-4 w-4 mr-1" />
-          {importCsv.isPending ? "Importing..." : "Import Journey CSV"}
-        </Button>
-      </div>
+      <PageHeader
+        icon={Rocket}
+        title="GovRAMP Journey"
+        description="Track your progress across GovRAMP tiers: PS (40), Ready (80), Core (60), Authorized (319)"
+        actions={
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={handleImportCsv}
+            disabled={importCsv.isPending}
+          >
+            <Upload className="h-4 w-4 mr-1" />
+            {importCsv.isPending ? "Importing..." : "Import Journey CSV"}
+          </Button>
+        }
+      />
 
       {importResult && (
         <div className="flex items-center gap-2 text-sm text-green-700 bg-green-50 p-3 rounded">
@@ -339,6 +338,211 @@ export default function GovRAMPJourneyPage() {
               </Card>
             ))}
           </div>
+
+          {/* Evidence Submission Timeseries Chart */}
+          {snapshots.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">
+                  Evidence Submitted Over Time
+                </CardTitle>
+                <p className="text-xs text-muted-foreground">
+                  Controls with evidence across each assessment tier since 2024
+                </p>
+              </CardHeader>
+              <CardContent>
+                {(() => {
+                  const sorted = [...snapshots].sort((a, b) =>
+                    a.period.localeCompare(b.period)
+                  );
+
+                  const series = [
+                    {
+                      label: "Progressing Snapshot",
+                      color: "#3b82f6",
+                      data: sorted.map((s) => {
+                        const total = s.core_required || 60;
+                        const pct = s.snapshot_score ?? 0;
+                        return Math.round((pct / 100) * total);
+                      }),
+                    },
+                    {
+                      label: "Core",
+                      color: "#f97316",
+                      data: sorted.map((s) => s.core_implemented),
+                    },
+                    {
+                      label: "Ready",
+                      color: "#eab308",
+                      data: sorted.map((s) => s.ready_implemented),
+                    },
+                    {
+                      label: "Authorized",
+                      color: "#22c55e",
+                      data: sorted.map((s) => s.authorized_implemented),
+                    },
+                  ];
+
+                  const allValues = series.flatMap((s) => s.data);
+                  const maxVal = Math.max(...allValues, 1);
+                  const yMax = Math.ceil(maxVal / 10) * 10 || 10;
+
+                  const chartW = 700;
+                  const chartH = 300;
+                  const padL = 50;
+                  const padR = 20;
+                  const padT = 20;
+                  const padB = 50;
+                  const plotW = chartW - padL - padR;
+                  const plotH = chartH - padT - padB;
+
+                  const xStep =
+                    sorted.length > 1 ? plotW / (sorted.length - 1) : plotW;
+
+                  const toX = (i: number) =>
+                    padL + (sorted.length > 1 ? i * xStep : plotW / 2);
+                  const toY = (v: number) =>
+                    padT + plotH - (v / yMax) * plotH;
+
+                  const yTicks = 5;
+                  const yLines = Array.from({ length: yTicks + 1 }, (_, i) =>
+                    Math.round((yMax / yTicks) * i)
+                  );
+
+                  return (
+                    <div className="space-y-4">
+                      {/* Legend */}
+                      <div className="flex flex-wrap gap-4">
+                        {series.map((s) => (
+                          <div
+                            key={s.label}
+                            className="flex items-center gap-1.5 text-xs"
+                          >
+                            <span
+                              className="inline-block w-3 h-3 rounded-full"
+                              style={{ backgroundColor: s.color }}
+                            />
+                            <span className="font-medium">{s.label}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* SVG Chart */}
+                      <svg
+                        viewBox={`0 0 ${chartW} ${chartH}`}
+                        className="w-full"
+                        style={{ maxHeight: 340 }}
+                      >
+                        {/* Grid lines */}
+                        {yLines.map((v) => (
+                          <g key={v}>
+                            <line
+                              x1={padL}
+                              y1={toY(v)}
+                              x2={chartW - padR}
+                              y2={toY(v)}
+                              stroke="#e5e7eb"
+                              strokeWidth={1}
+                            />
+                            <text
+                              x={padL - 8}
+                              y={toY(v) + 4}
+                              textAnchor="end"
+                              className="fill-muted-foreground"
+                              fontSize={11}
+                            >
+                              {v}
+                            </text>
+                          </g>
+                        ))}
+
+                        {/* X-axis labels */}
+                        {sorted.map((s, i) => {
+                          const p = s.period;
+                          const label =
+                            p.length === 6
+                              ? `${p.slice(0, 4)}-${p.slice(4)}`
+                              : p;
+                          return (
+                            <text
+                              key={s.id}
+                              x={toX(i)}
+                              y={chartH - 8}
+                              textAnchor="middle"
+                              className="fill-muted-foreground"
+                              fontSize={10}
+                            >
+                              {label}
+                            </text>
+                          );
+                        })}
+
+                        {/* Lines + dots */}
+                        {series.map((s) => {
+                          const points = s.data
+                            .map((v, i) => `${toX(i)},${toY(v)}`)
+                            .join(" ");
+                          return (
+                            <g key={s.label}>
+                              <polyline
+                                points={points}
+                                fill="none"
+                                stroke={s.color}
+                                strokeWidth={2.5}
+                                strokeLinejoin="round"
+                                strokeLinecap="round"
+                              />
+                              {s.data.map((v, i) => (
+                                <circle
+                                  key={i}
+                                  cx={toX(i)}
+                                  cy={toY(v)}
+                                  r={4}
+                                  fill="white"
+                                  stroke={s.color}
+                                  strokeWidth={2}
+                                />
+                              ))}
+                              {/* Value labels on last point */}
+                              {s.data.length > 0 && (
+                                <text
+                                  x={toX(s.data.length - 1) + 8}
+                                  y={toY(s.data[s.data.length - 1]) + 4}
+                                  fontSize={11}
+                                  fontWeight="bold"
+                                  fill={s.color}
+                                >
+                                  {s.data[s.data.length - 1]}
+                                </text>
+                              )}
+                            </g>
+                          );
+                        })}
+
+                        {/* Axes */}
+                        <line
+                          x1={padL}
+                          y1={padT}
+                          x2={padL}
+                          y2={padT + plotH}
+                          stroke="#94a3b8"
+                          strokeWidth={1}
+                        />
+                        <line
+                          x1={padL}
+                          y1={padT + plotH}
+                          x2={chartW - padR}
+                          y2={padT + plotH}
+                          stroke="#94a3b8"
+                          strokeWidth={1}
+                        />
+                      </svg>
+                    </div>
+                  );
+                })()}
+              </CardContent>
+            </Card>
+          )}
 
           {/* Snapshot History */}
           {snapshots.length > 0 && (

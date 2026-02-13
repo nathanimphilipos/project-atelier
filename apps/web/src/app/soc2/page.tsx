@@ -1,9 +1,13 @@
 "use client";
 
-import { CheckCircle2, XCircle, Link2 } from "lucide-react";
+import { CheckCircle2, XCircle, Link2, RefreshCw } from "lucide-react";
 import { useSOC2Targets, useEvidence } from "@/hooks/use-api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PageHeader } from "@/components/layout/page-header";
+import { StatCard } from "@/components/layout/stat-card";
+import { EmptyState } from "@/components/layout/empty-state";
+import { SkeletonTable } from "@/components/layout/skeleton";
 
 export default function SOC2ReusePage() {
   const { data: targets, isLoading } = useSOC2Targets();
@@ -14,48 +18,48 @@ export default function SOC2ReusePage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-navy">SOC 2 Evidence Reuse</h1>
-        <p className="text-sm text-muted-foreground">
-          Reuse NIST 800-53 evidence for SOC 2 targets via crosswalk mapping
-        </p>
-      </div>
+      <PageHeader
+        icon={RefreshCw}
+        title="SOC 2 Evidence Reuse"
+        description="Reuse NIST 800-53 evidence for SOC 2 targets via crosswalk mapping"
+      />
 
       {isLoading ? (
-        <p className="text-muted-foreground">Loading SOC 2 targets...</p>
+        <SkeletonTable rows={6} />
       ) : !targets || targets.length === 0 ? (
-        <Card>
-          <CardContent className="py-12 text-center text-muted-foreground">
-            No SOC 2 crosswalk data imported yet. Go to Imports to upload a
-            crosswalk CSV.
-          </CardContent>
-        </Card>
+        <EmptyState
+          icon={RefreshCw}
+          title="No SOC 2 crosswalk data imported"
+          description="Go to Imports to upload a crosswalk CSV to see evidence reuse opportunities."
+        />
       ) : (
         <>
           {/* Summary */}
           <div className="grid grid-cols-3 gap-4">
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <p className="text-3xl font-bold text-navy">{targets.length}</p>
-                <p className="text-sm text-muted-foreground">Total Targets</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <p className="text-3xl font-bold text-green-600">
-                  {satisfied.length}
-                </p>
-                <p className="text-sm text-muted-foreground">Satisfied</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <p className="text-3xl font-bold text-red-600">
-                  {unsatisfied.length}
-                </p>
-                <p className="text-sm text-muted-foreground">Unsatisfied</p>
-              </CardContent>
-            </Card>
+            <StatCard
+              icon={Link2}
+              label="Total Targets"
+              value={targets.length}
+              iconBg="bg-navy/8"
+              iconColor="text-navy"
+              valueColor="text-navy"
+            />
+            <StatCard
+              icon={CheckCircle2}
+              label="Satisfied"
+              value={satisfied.length}
+              iconBg="bg-emerald-50"
+              iconColor="text-emerald-600"
+              valueColor="text-emerald-600"
+            />
+            <StatCard
+              icon={XCircle}
+              label="Unsatisfied"
+              value={unsatisfied.length}
+              iconBg="bg-red-50"
+              iconColor="text-red-500"
+              valueColor="text-red-600"
+            />
           </div>
 
           {/* Target List */}

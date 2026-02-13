@@ -172,7 +172,7 @@ export interface GovRAMPStats {
 }
 
 export const TIER_LABELS: Record<string, string> = {
-  ps: "GovRAMP Progress",
+  ps: "Progressing Snapshot",
   ready: "GovRAMP Ready",
   core: "GovRAMP Core",
   authorized: "GovRAMP Authorized",

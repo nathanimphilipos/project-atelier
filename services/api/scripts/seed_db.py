@@ -10,7 +10,7 @@ from app.database import engine, SessionLocal, Base
 from app.models import Control, Board, GovRAMPProgress
 
 BOARDS = [
-    "GovRAMP Progress",
+    "Progressing Snapshot",
     "GovRAMP Ready",
     "GovRAMP Core",
     "GovRAMP Authorized (Moderate)",

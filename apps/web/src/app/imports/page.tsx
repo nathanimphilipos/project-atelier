@@ -5,6 +5,7 @@ import { Upload, FileSpreadsheet, CheckCircle2 } from "lucide-react";
 import { useImportCrosswalk } from "@/hooks/use-api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageHeader } from "@/components/layout/page-header";
 
 export default function ImportsPage() {
   const importCrosswalk = useImportCrosswalk();
@@ -24,31 +25,38 @@ export default function ImportsPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-navy">Imports</h1>
-        <p className="text-sm text-muted-foreground">
-          Import crosswalk data and other configuration
-        </p>
-      </div>
+      <PageHeader
+        icon={Upload}
+        title="Imports"
+        description="Import crosswalk data and other configuration"
+      />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Crosswalk Import */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base flex items-center gap-2">
-              <FileSpreadsheet className="h-5 w-5 text-navy" />
-              SOC 2 Crosswalk CSV
-            </CardTitle>
+        <Card className="hover:shadow-card-hover">
+          <CardHeader className="pb-3">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy/6">
+                <FileSpreadsheet className="h-4 w-4 text-navy" />
+              </div>
+              <div>
+                <CardTitle className="text-section-title text-navy">
+                  SOC 2 Crosswalk CSV
+                </CardTitle>
+                <p className="text-[11px] text-muted-foreground mt-0.5">Active</p>
+              </div>
+            </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-[13px] text-muted-foreground leading-relaxed">
               Upload a CSV with columns:{" "}
-              <code className="text-xs bg-muted px-1 py-0.5 rounded">
+              <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded-md font-mono">
                 nist_control_id, soc2_target, evidence_objective
               </code>
             </p>
             <Button
               variant="cta"
+              size="sm"
               onClick={() => crosswalkRef.current?.click()}
               disabled={importCrosswalk.isPending}
             >
@@ -65,13 +73,13 @@ export default function ImportsPage() {
               onChange={handleCrosswalkUpload}
             />
             {importResult && (
-              <div className="flex items-center gap-2 text-sm text-green-700 bg-green-50 p-3 rounded">
+              <div className="flex items-center gap-2 text-[13px] text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-100">
                 <CheckCircle2 className="h-4 w-4" />
                 Imported {importResult.imported} crosswalk mappings
               </div>
             )}
             {importCrosswalk.isError && (
-              <p className="text-sm text-destructive">
+              <p className="text-[13px] text-destructive">
                 {(importCrosswalk.error as Error).message}
               </p>
             )}
@@ -79,25 +87,29 @@ export default function ImportsPage() {
         </Card>
 
         {/* GovRAMP Excel Import Placeholder */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base flex items-center gap-2">
-              <FileSpreadsheet className="h-5 w-5 text-navy" />
-              GovRAMP Excel Import
-            </CardTitle>
+        <Card className="opacity-75">
+          <CardHeader className="pb-3">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted">
+                <FileSpreadsheet className="h-4 w-4 text-muted-foreground" />
+              </div>
+              <div>
+                <CardTitle className="text-section-title text-muted-foreground">
+                  GovRAMP Excel Import
+                </CardTitle>
+                <p className="text-[11px] text-muted-foreground mt-0.5">Coming soon</p>
+              </div>
+            </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-[13px] text-muted-foreground leading-relaxed">
               Import GovRAMP workbook data to populate boards and control
-              mappings. (Coming soon)
+              mappings.
             </p>
-            <Button variant="outline" disabled>
+            <Button variant="outline" size="sm" disabled>
               <Upload className="h-4 w-4 mr-1" />
               Upload GovRAMP Excel
             </Button>
-            <p className="text-xs text-muted-foreground italic">
-              This feature is planned for a future release.
-            </p>
           </CardContent>
         </Card>
       </div>

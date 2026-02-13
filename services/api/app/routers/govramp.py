@@ -33,6 +33,101 @@ TIER_DEFAULTS = {
 
 PMO_FEEDBACK_PREFIX = "PMO Feedback"
 
+# Map PMO feedback status -> (Control.status, Assessment.confidence_score)
+_STATUS_MAP: dict[str, tuple[str, int]] = {
+    "pass": ("ready", 100),
+    "pass with concerns": ("under_review", 50),
+    "fail": ("needs_evidence", 0),
+    "not assessed": ("not_started", 0),
+}
+
+# Priority for aggregation: lower index = worse status wins
+_STATUS_PRIORITY = ["needs_evidence", "under_review", "ready", "not_started"]
+
+
+def _normalize_control_id(raw_id: str) -> str:
+    """Normalize CSV control IDs to match DB format.
+    e.g. 'AC-2' -> 'AC-02', 'AC-2 (1)' -> 'AC-02', 'AC-17' -> 'AC-17'
+    """
+    raw_id = raw_id.strip()
+    # Strip enhancement suffix like ' (1)', ' (07)'
+    base = re.sub(r"\s*\(.*\)$", "", raw_id)
+    # Split on hyphen: 'AC-2' -> ['AC', '2']
+    match = re.match(r"^([A-Z]{2})-(\d+)$", base)
+    if match:
+        prefix, num = match.group(1), match.group(2)
+        return f"{prefix}-{num.zfill(2)}"
+    return base
+
+
+def _sync_controls_from_feedback(db: Session) -> int:
+    """After feedback import, update Control.status and Assessment records."""
+    feedback_rows = db.query(GovRAMPFeedback).all()
+    if not feedback_rows:
+        return 0
+
+    # Aggregate by normalized base control ID (worst status wins)
+    control_agg: dict[str, tuple[str, int]] = {}  # control_id -> (status, score)
+    for fb in feedback_rows:
+        base_id = _normalize_control_id(fb.control_id)
+        pmo_status = (fb.latest_status or "").lower().strip()
+
+        mapped = _STATUS_MAP.get(pmo_status)
+        if not mapped:
+            # Try partial match
+            for key, val in _STATUS_MAP.items():
+                if key in pmo_status:
+                    mapped = val
+                    break
+            if not mapped:
+                mapped = ("needs_evidence", 0) if not fb.control_completed else ("ready", 100)
+
+        new_status, new_score = mapped
+
+        if base_id in control_agg:
+            existing_status, existing_score = control_agg[base_id]
+            # Worse status wins (lower priority index)
+            existing_pri = _STATUS_PRIORITY.index(existing_status) if existing_status in _STATUS_PRIORITY else 99
+            new_pri = _STATUS_PRIORITY.index(new_status) if new_status in _STATUS_PRIORITY else 99
+            if new_pri < existing_pri:
+                control_agg[base_id] = (new_status, new_score)
+            elif new_pri == existing_pri:
+                control_agg[base_id] = (new_status, min(existing_score, new_score))
+        else:
+            control_agg[base_id] = (new_status, new_score)
+
+    updated = 0
+    for ctrl_id, (status, score) in control_agg.items():
+        control = db.query(Control).filter(Control.control_id == ctrl_id).first()
+        if not control:
+            continue
+
+        control.status = status
+
+        # Upsert latest assessment
+        existing_assessment = (
+            db.query(Assessment)
+            .filter(Assessment.control_id == ctrl_id)
+            .order_by(Assessment.created_at.desc())
+            .first()
+        )
+        if existing_assessment:
+            existing_assessment.meets_status = status
+            existing_assessment.confidence_score = score
+            existing_assessment.model_used = "pmo-feedback-sync"
+        else:
+            db.add(Assessment(
+                control_id=ctrl_id,
+                meets_status=status,
+                confidence_score=score,
+                model_used="pmo-feedback-sync",
+                prompt_version="pmo-csv-v1",
+            ))
+        updated += 1
+
+    db.commit()
+    return updated
+
 
 def _clean_cell(value: str) -> str:
     return re.sub(r"\s+", " ", value.replace("\uFFFD", "").strip())
@@ -338,6 +433,10 @@ async def upload_pmo_feedback(
     db.query(GovRAMPFeedback).delete()
     db.add_all(parsed_feedback)
     db.commit()
+
+    # Sync feedback statuses back to the main Controls table
+    synced = _sync_controls_from_feedback(db)
+    logger.info("Synced %d controls from PMO feedback", synced)
 
     return {
         "imported": len(parsed_feedback),
