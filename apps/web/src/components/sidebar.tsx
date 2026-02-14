@@ -12,6 +12,7 @@ import {
   Home,
   Rocket,
   Hexagon,
+  TrendingUp,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +20,8 @@ const NAV_SECTIONS = [
   {
     label: "Overview",
     items: [
-      { href: "/", label: "Dashboard", icon: Home },
+      { href: "/dashboard", label: "Dashboard", icon: Home },
+      { href: "/market", label: "Market Snapshot", icon: TrendingUp },
     ],
   },
   {
